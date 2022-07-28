@@ -1,10 +1,25 @@
+import { Routes, Route, HashRouter } from "react-router-dom";
+import Header from "@components/Header";
+import routesConfig from "@routes/routesConfig";
+import { PageStyle } from "./App.style";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-          Learn React
-    </div>
+    <>
+      <HashRouter>
+        <PageStyle>
+          <Header />
+
+          <Routes>
+            {" "}
+            {routesConfig.map((route, index) => (
+              <Route key={index} path={route.path} element={route.element} />
+            ))}{" "}
+          </Routes>
+        </PageStyle>
+      </HashRouter>
+    </>
   );
-}
+};
 
 export default App;
