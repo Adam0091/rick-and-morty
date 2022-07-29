@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
+import { Container } from "../Container/Container";
 import {
-  Container,
+  HeaderContainer,
   HeaderWrapper,
   ListStyle,
   NavContainer,
@@ -12,20 +13,22 @@ const Header = () => {
   return (
     <HeaderWrapper>
       <Container>
-        <img src={logo} alt="logo" />
-        <NavContainer>
-          <ListStyle>
-            <li>
-              <NavLink to="">Characters</NavLink>
-            </li>
-            <li>
-              <NavLink to="">Locations</NavLink>
-            </li>
-            <li>
-              <NavLink to="">Episodes</NavLink>
-            </li>
-          </ListStyle>
-        </NavContainer>
+        <HeaderContainer>
+          <img src={logo} alt="logo" />
+          <NavContainer>
+            <ListStyle>
+              <li>
+                <NavLink to="">Characters</NavLink>
+              </li>
+              <li>
+                <NavLink to="">Locations</NavLink>
+              </li>
+              <li>
+                <NavLink to="">Episodes</NavLink>
+              </li>
+            </ListStyle>
+          </NavContainer>
+        </HeaderContainer>
       </Container>
     </HeaderWrapper>
   );

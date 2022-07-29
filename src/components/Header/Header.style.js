@@ -7,17 +7,13 @@ export const HeaderWrapper = styled.header`
   box-shadow: -2px 0px 8px 2px rgba(0, 0, 0, 0.1);
 `;
 
-export const NavContainer = styled.div`
+export const HeaderContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
 `;
 
-export const Container = styled.div`
-  width: 100%;
-  max-width: 1020px;
-  margin: 0 auto;
-
+export const NavContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
