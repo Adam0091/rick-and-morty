@@ -32,7 +32,7 @@ const CharactersPage = () => {
   const [selectOption, setSelectOption] = useState({
     species: [],
     gender: [],
-    status: []
+    status: [],
   });
 
   const [filterOptions, setFilterOptions] = useState({
@@ -63,8 +63,8 @@ const CharactersPage = () => {
       setSelectOption({
         species: [...originalSpecies],
         gender: [...originalGender],
-        status: [...originalStatus]
-      })
+        status: [...originalStatus],
+      });
     },
   });
 
