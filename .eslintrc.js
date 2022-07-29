@@ -8,6 +8,9 @@ module.exports = {
         "plugin:react/recommended",
         "plugin:react/jsx-runtime"
     ],
+    "overrides": [{
+        "files": ["*.jsx", "*.js"]
+    }],
     "parserOptions": {
         "ecmaFeatures": {
             "jsx": true
@@ -20,6 +23,7 @@ module.exports = {
         "react"
     ],
     "rules": {
+        "no-unused-vars": 0,
         "prettier/prettier": 1
     },
     "settings": {
