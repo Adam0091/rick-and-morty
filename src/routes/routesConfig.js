@@ -1,9 +1,9 @@
-import Characters from "@containers/Characters";
+import CharactersPage from "@containers/CharactersPage";
 
 const routesConfig = [
   {
     path: "/",
-    element: <Characters />,
+    element: <CharactersPage />,
   },
 ];
 
