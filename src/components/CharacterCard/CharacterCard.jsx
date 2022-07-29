@@ -7,7 +7,7 @@ import {
 
 const CharacterCard = ({ character }) => {
   const { name, image, species } = character;
-
+  
   return (
     <CharacterWrapper>
       <CharacterImage image={image} />
@@ -21,10 +21,6 @@ const CharacterCard = ({ character }) => {
 };
 
 CharacterCard.propTypes = {
-  character: {
-    name: PropTypes.string,
-    image: PropTypes.string,
-    species: PropTypes.string,
-  },
+  character: PropTypes.object,
 };
 export default CharacterCard;
