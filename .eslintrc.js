@@ -23,7 +23,6 @@ module.exports = {
         "react"
     ],
     "rules": {
-        "no-unused-vars": 0,
         "prettier/prettier": 1
     },
     "settings": {
