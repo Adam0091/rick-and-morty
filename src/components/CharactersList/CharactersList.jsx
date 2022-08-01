@@ -1,13 +1,13 @@
 import PropTypes from "prop-types";
-import CharacterCard from "@components/CharacterCard/CharacterCard";
+import CharacterCard from "@components/CharacterCard";
 
-import { CharactersWrapper, TextStyle } from "./CharactersList.style";
+import { CharactersWrapper } from "./CharactersList.style";
 
 const CharactersList = ({ characters, visible }) => {
   if (characters.length === 0)
     return (
       <CharactersWrapper>
-        <TextStyle>Not Found</TextStyle>
+        <div className="chracters__not_found">Not Found</div>
       </CharactersWrapper>
     );
 

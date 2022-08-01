@@ -4,26 +4,31 @@ export const CharactersWrapper = styled.div`
   min-height: 350px;
 
   display: flex;
+  justify-content: space-between;
   flex-wrap: wrap;
 
   row-gap: 36px;
   column-gap: 20px;
 
   margin-top: 60px;
-`;
 
-export const TextStyle = styled.div`
-  width: 100%;
+  .chracters__not_found {
+    width: 100%;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 30px;
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 30px;
 
-  letter-spacing: 0.15px;
+    letter-spacing: 0.15px;
+  }
+
+  @media screen and (max-width: 570px) {
+    justify-content: center;
+  }
 `;
