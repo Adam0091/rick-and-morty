@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
-import { PropTypes } from "prop-types";
 import { Container } from "@components/Container/Container";
 import Burger from "./Burger";
 import {
@@ -12,12 +11,11 @@ import {
 
 import logo from "./img/header_logo.png";
 
-const Header = ({ canScroll, setCanScroll }) => {
+const Header = () => {
   const [isActive, setIsActive] = useState(false);
 
   const handlerBurger = (value) => {
     setIsActive(value);
-    setCanScroll(!canScroll);
   };
 
   return (
@@ -46,11 +44,6 @@ const Header = ({ canScroll, setCanScroll }) => {
       </Container>
     </HeaderWrapper>
   );
-};
-
-Header.propTypes = {
-  canScroll: PropTypes.bool,
-  setCanScroll: PropTypes.func,
 };
 
 export default Header;

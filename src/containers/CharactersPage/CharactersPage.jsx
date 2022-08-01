@@ -36,7 +36,6 @@ const CharactersPage = () => {
   const [items, setItems] = useState([]);
   const [visible, setVisible] = useState(8);
   const ids = new Array(826).fill().map((_, i) => i + 1);
-  console.log("render");
   const { loading, error, data } = useQuery(GET_CHARACTERS, {
     variables: { ids },
     onCompleted: (data) => {

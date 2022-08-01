@@ -5,7 +5,6 @@ export const PageStyle = styled.div`
   width: 100%;
   top: 0;
   left: 0;
-  overflow-x: hidden;
   display: flex;
   flex-direction: column;
 `;
