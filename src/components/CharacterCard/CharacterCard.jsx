@@ -7,7 +7,7 @@ import {
 
 const CharacterCard = ({ character }) => {
   const { name, image, species } = character;
-  
+
   return (
     <CharacterWrapper>
       <CharacterImage image={image} />
