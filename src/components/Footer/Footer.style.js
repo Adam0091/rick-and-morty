@@ -5,15 +5,21 @@ export const FooterWrapper = styled.footer`
   align-items: center;
   justify-content: center;
 
-  font-family: "Karla", sans-serif;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 21px;
+  .footer__title {
+    width: 100%;
 
-  background: #ffffff;
-  box-shadow: -2px 0px 8px 2px rgba(0, 0, 0, 0.1);
+    font-family: "Karla", sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 21px;
 
-  margin-top: 44px;
-  padding: 20px 0;
+    background: #ffffff;
+    box-shadow: -2px 0px 8px 2px rgba(0, 0, 0, 0.1);
+
+    margin-top: 44px;
+    padding: 20px 0;
+
+    text-align: center;
+  }
 `;
