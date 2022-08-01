@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
+export const Content = styled.main`
+  width: 100%;
+`;
+
 export const LogoWrapper = styled.div`
   margin-top: 26px;
 
@@ -18,45 +22,6 @@ export const LogoWrapper = styled.div`
   }
 `;
 
-export const FiltersWrapper = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  column-gap: 20px;
-
-  margin-top: 16px;
-`;
-
-export const WrapperInputSearch = styled.div`
-  display: flex;
-
-  border: 1px solid rgba(0, 0, 0, 0.5);
-  border-radius: 8px;
-  padding: 16px;
-
-  column-gap: 8px;
-
-  &:focus {
-    border: 1px solid rgba(0, 0, 0, 0.5);
-  }
-
-  input,
-  input:focus {
-    outline: none;
-    border: none;
-
-    font-family: "Roboto";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 150%;
-    /* identical to box height, or 24px */
-
-    /* grey */
-
-    color: rgba(0, 0, 0, 0.5);
-  }
-`;
 export const ButtonWrapper = styled.div`
   display: flex;
   align-items: center;
@@ -96,4 +61,14 @@ export const ButtonStyle = styled.button`
     background: #2196f3;
     color: #f2f9fe;
   }
+`;
+
+export const CircularContainer = styled.div`
+  width: 100%;
+  height: 100%;
+  min-height: 400px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
