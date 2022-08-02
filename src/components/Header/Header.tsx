@@ -24,7 +24,7 @@ export const Header = () => {
         <HeaderContainer>
           <img src={logo} alt="logo" />
           <NavContainer>
-            <ListStyle isActive={isActive} onClick={() => handlerBurger()}>
+            <ListStyle isActive={isActive} onClick={handlerBurger}>
               <li>
                 <NavLink to="">Characters</NavLink>
               </li>

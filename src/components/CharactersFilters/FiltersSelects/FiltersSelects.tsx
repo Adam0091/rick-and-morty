@@ -43,32 +43,32 @@ export const FiltersSelects = ({
 
   const handleSelect = (value: any, type: string) => {
     if (window.innerWidth > 767) {
-      setValues({
+      setValues((values: any) => ({
         ...values,
         [type]: value,
-      });
-      setFilterOptions({
+      }));
+      setFilterOptions((filterOptions: any) => ({
         ...filterOptions,
         [type]: value,
-      });
+      }));
     } else {
-      setValues({
+      setValues((values: any) => ({
         ...values,
         [type]: value,
-      });
+      }));
     }
   };
 
   const handleApplyButton = () => {
-    setIsActive(!isActive);
-    setFilterOptions({
+    setIsActive((isActive: boolean) => !isActive);
+    setFilterOptions((filterOptions: any) => ({
       ...filterOptions,
       ...values,
-    });
+    }));
   };
 
   const onCloseSelects = () => {
-    setIsActive(!isActive);
+    setIsActive((isActive: boolean) => !isActive);
     setValues({
       species: filterOptions.species,
       gender: filterOptions.gender,
