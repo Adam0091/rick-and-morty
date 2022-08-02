@@ -23,13 +23,13 @@ export const CharacterWrapper = styled.div`
   }
 `;
 
-export const CharacterImage = styled.div<{ Image: any }>`
+export const CharacterImageWrapper = styled.div`
   width: 100%;
   height: 240px;
-
-  background-image: ${({ Image }) => Image && `url("${Image}")`};
-  background-repeat: no-repeat;
-  background-size: cover;
+  img {
+    width: 100%;
+    height: 100%;
+  }
 `;
 
 export const CharacterDescription = styled.div`
@@ -40,7 +40,6 @@ export const CharacterDescription = styled.div`
   padding: 12px 16px;
 
   .character__name {
-    font-family: "Roboto";
     font-style: normal;
     font-weight: 500;
     font-size: 20px;
@@ -52,7 +51,6 @@ export const CharacterDescription = styled.div`
   }
 
   .character__species {
-    font-family: "Roboto";
     font-style: normal;
     font-weight: 400;
     font-size: 14px;

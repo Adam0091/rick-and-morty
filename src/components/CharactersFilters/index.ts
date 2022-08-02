@@ -1,1 +1,1 @@
-export { default } from "./CharactersFilters";
+export * from "./CharactersFilters";

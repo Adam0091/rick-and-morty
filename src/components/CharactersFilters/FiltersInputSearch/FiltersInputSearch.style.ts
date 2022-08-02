@@ -24,7 +24,6 @@ export const WrapperInputSearch = styled.div`
     outline: none;
     border: none;
 
-    font-family: "Roboto";
     font-style: normal;
     font-weight: 400;
     font-size: 16px;

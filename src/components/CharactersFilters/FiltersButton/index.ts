@@ -1,1 +1,1 @@
-export { default } from "./FiltersButton";
+export * from "./FiltersButton";

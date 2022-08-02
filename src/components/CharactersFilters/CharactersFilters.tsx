@@ -1,14 +1,13 @@
 import { useState } from "react";
-import PropTypes from "prop-types";
 
-import Shadow from "../UI-Kit/Shadow";
-import FiltersButton from "./FiltersButton";
-import FiltersInputSearch from "./FiltersInputSearch";
-import FiltersSelects from "./FiltersSelects/FiltersSelects";
+import { Shadow } from "../UI-Kit/Shadow";
+import { FiltersButton } from "./FiltersButton";
+import { FiltersInputSearch } from "./FiltersInputSearch";
+import { FiltersSelects } from "./FiltersSelects/FiltersSelects";
 
 import { FiltersWrapper } from "./CharactersFilters.style";
 
-const CharactersFilters = ({
+export const CharactersFilters = ({
   selectOption,
   filterOptions,
   setFilterOptions,
@@ -42,11 +41,3 @@ const CharactersFilters = ({
     </>
   );
 };
-
-CharactersFilters.propTypes = {
-  selectOption: PropTypes.object,
-  filterOptions: PropTypes.object,
-  setFilterOptions: PropTypes.func,
-};
-
-export default CharactersFilters;

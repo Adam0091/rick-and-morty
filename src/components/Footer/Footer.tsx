@@ -1,6 +1,6 @@
 import { FooterWrapper } from "./Footer.style";
 
-const Footer = () => {
+export const Footer = () => {
   return (
     <FooterWrapper>
       <h3 className="footer__title">
@@ -9,5 +9,3 @@ const Footer = () => {
     </FooterWrapper>
   );
 };
-
-export default Footer;

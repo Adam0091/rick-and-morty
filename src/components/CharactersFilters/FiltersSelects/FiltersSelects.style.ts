@@ -46,7 +46,6 @@ export const WrapperSelectsHeader = styled.div`
 `;
 
 export const SelectsHeaderTitle = styled.h6`
-  font-family: "Roboto";
   font-weight: 500;
   font-size: 20px;
   line-height: 30px;
@@ -83,7 +82,6 @@ export const ApplyButton = styled.button`
 
   padding: 10px 16px;
 
-  font-family: "Roboto";
   font-weight: 500;
   font-size: 14px;
   line-height: 16px;

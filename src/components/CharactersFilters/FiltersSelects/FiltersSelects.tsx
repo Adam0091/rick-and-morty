@@ -1,6 +1,4 @@
-import PropTypes from "prop-types";
-
-import Select from "./../../UI-Kit/Select/Select";
+import { Select } from "./../../UI-Kit/Select/Select";
 
 import {
   ApplyButton,
@@ -13,7 +11,7 @@ import {
 
 import crossIcon from "./img/crossIcon.svg";
 
-const FiltersSelects = ({
+export const FiltersSelects = ({
   values,
   setValues,
   selectOption,
@@ -93,7 +91,7 @@ const FiltersSelects = ({
           options={select.option}
           label={select.label}
           value={select.value}
-          setValue={(value) => handleSelect(value, select.type)}
+          setValue={(value: any) => handleSelect(value, select.type)}
         />
       ))}
 
@@ -103,15 +101,3 @@ const FiltersSelects = ({
     </WrapperSelects>
   );
 };
-
-FiltersSelects.propTypes = {
-  values: PropTypes.object,
-  setValues: PropTypes.func,
-  selectOption: PropTypes.object,
-  filterOptions: PropTypes.object,
-  setFilterOptions: PropTypes.func,
-  isActive: PropTypes.bool,
-  setIsActive: PropTypes.func,
-};
-
-export default FiltersSelects;

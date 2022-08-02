@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { Container } from "@/components/Container/Container.style";
-import Burger from "./Burger";
+import { Burger } from "./Burger";
 import {
   HeaderContainer,
   HeaderWrapper,
@@ -11,7 +11,7 @@ import {
 
 import logo from "./img/header_logo.png";
 
-const Header = () => {
+export const Header = () => {
   const [isActive, setIsActive] = useState(false);
 
   const handlerBurger = () => {
@@ -42,5 +42,3 @@ const Header = () => {
     </HeaderWrapper>
   );
 };
-
-export default Header;

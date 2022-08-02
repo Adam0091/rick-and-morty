@@ -1,4 +1,3 @@
-import PropTypes from "prop-types";
 import {
   WrapperFiltersButton,
   FiltersButtonStyle,
@@ -7,7 +6,7 @@ import {
 
 import filterIcon from "./img/filterIcon.svg";
 
-const FiltersButton = ({ isActive, setIsActive }: any) => {
+export const FiltersButton = ({ isActive, setIsActive }: any) => {
   return (
     <WrapperFiltersButton onClick={() => setIsActive(!isActive)}>
       <FiltersButtonStyle>
@@ -19,10 +18,3 @@ const FiltersButton = ({ isActive, setIsActive }: any) => {
     </WrapperFiltersButton>
   );
 };
-
-FiltersButton.propTypes = {
-  isActive: PropTypes.bool,
-  setIsActive: PropTypes.func,
-};
-
-export default FiltersButton;

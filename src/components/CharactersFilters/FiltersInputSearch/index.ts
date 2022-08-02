@@ -1,1 +1,1 @@
-export { default } from "./FiltersInputSearch";
+export * from "./FiltersInputSearch";

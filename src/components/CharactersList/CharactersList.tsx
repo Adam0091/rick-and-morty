@@ -1,8 +1,8 @@
-import CharacterCard from "@/components/CharacterCard";
+import { CharacterCard } from "@/components/CharacterCard";
 
 import { CharactersWrapper } from "./CharactersList.style";
 
-const CharactersList = ({ characters, visible }: any) => {
+export const CharactersList = ({ characters, visible }: any) => {
   if (characters.length === 0)
     return (
       <CharactersWrapper>
@@ -18,5 +18,3 @@ const CharactersList = ({ characters, visible }: any) => {
     </CharactersWrapper>
   );
 };
-
-export default CharactersList;

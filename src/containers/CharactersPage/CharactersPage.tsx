@@ -3,8 +3,8 @@ import { useQuery } from "@apollo/client";
 import { CircularProgress } from "@mui/material";
 
 import { Container } from "@/components/Container/Container.style";
-import CharactersList from "@/components/CharactersList";
-import CharactersFilters from "@/components/CharactersFilters";
+import { CharactersList } from "@/components/CharactersList";
+import { CharactersFilters } from "@/components/CharactersFilters";
 
 import { GET_CHARACTERS } from "@/utils/network";
 
@@ -18,7 +18,7 @@ import {
 
 import logoCharacters from "./img/logo.png";
 
-const CharactersPage = () => {
+export const CharactersPage = () => {
   //Хранит уникальные значение силектов
   const [selectOptions, setSelectOptions] = useState({
     species: [],
@@ -123,5 +123,3 @@ const CharactersPage = () => {
     </Container>
   );
 };
-
-export default CharactersPage;

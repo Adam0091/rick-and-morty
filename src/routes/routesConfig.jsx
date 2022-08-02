@@ -1,4 +1,4 @@
-import CharactersPage from "@/containers/CharactersPage";
+import { CharactersPage } from "@/containers/CharactersPage";
 
 const routesConfig = [
   {

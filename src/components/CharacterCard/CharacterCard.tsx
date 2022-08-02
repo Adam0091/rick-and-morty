@@ -1,15 +1,17 @@
 import {
   CharacterDescription,
-  CharacterImage,
+  CharacterImageWrapper,
   CharacterWrapper,
 } from "./CharacterCard.style";
 
-const CharacterCard = ({ character }: any) => {
+export const CharacterCard = ({ character }: any) => {
   const { name, image, species } = character;
 
   return (
     <CharacterWrapper>
-      <CharacterImage Image={image} />
+      <CharacterImageWrapper>
+        <img src={image} alt={image} />
+      </CharacterImageWrapper>
 
       <CharacterDescription>
         <h6 className="character__name">{name}</h6>
@@ -18,5 +20,3 @@ const CharacterCard = ({ character }: any) => {
     </CharacterWrapper>
   );
 };
-
-export default CharacterCard;

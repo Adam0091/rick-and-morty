@@ -1,9 +1,8 @@
-import PropTypes from "prop-types";
 import { TextField } from "@mui/material";
 import { SelectStyle } from "./Select.style";
 import { useState } from "react";
 
-const Select = ({ options, label, value, setValue }: any) => {
+export const Select = ({ options, label, value, setValue }: any) => {
   const [inputValue, setInputValue] = useState("");
 
   return (
@@ -23,12 +22,3 @@ const Select = ({ options, label, value, setValue }: any) => {
     />
   );
 };
-
-Select.propTypes = {
-  options: PropTypes.array,
-  label: PropTypes.string,
-  value: PropTypes.string,
-  setValue: PropTypes.func,
-};
-
-export default Select;

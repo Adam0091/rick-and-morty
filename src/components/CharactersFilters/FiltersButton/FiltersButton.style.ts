@@ -24,7 +24,6 @@ export const FiltersButtonStyle = styled.button`
 
   padding: 20px 32px;
 
-  font-family: "Roboto";
   font-weight: 500;
   font-size: 14px;
   line-height: 16px;

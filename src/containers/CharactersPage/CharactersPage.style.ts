@@ -44,7 +44,6 @@ export const ButtonStyle = styled.button`
     0px 6px 10px rgba(0, 0, 0, 0.14);
   border-radius: 4px;
 
-  font-family: "Roboto";
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
