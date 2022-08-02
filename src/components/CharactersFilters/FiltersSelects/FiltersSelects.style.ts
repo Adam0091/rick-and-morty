@@ -14,7 +14,6 @@ export const WrapperSelects = styled.div<{ IsActive: boolean }>`
     display: ${({ IsActive }) => (IsActive ? "flex" : "none")};
     position: fixed;
     width: 100%;
-    box-sizing: border-box;
     max-width: 312px;
     height: 350px;
 
@@ -59,6 +58,7 @@ export const SelectHeaderCross = styled.div`
   width: 14px;
 
   padding-right: 5px;
+  box-sizing: content-box;
 
   cursor: pointer;
 `;

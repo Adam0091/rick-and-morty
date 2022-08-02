@@ -5,8 +5,6 @@ export const WrapperInputSearch = styled.div`
   max-width: 312px;
   display: flex;
 
-  box-sizing: border-box;
-
   border: 1px solid rgba(0, 0, 0, 0.5);
   border-radius: 8px;
   padding: 16px;
