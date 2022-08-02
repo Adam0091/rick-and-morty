@@ -75,6 +75,7 @@ export const FiltersSelects = ({
   };
 
   const handleApplyButton = () => {
+    document.body.classList.toggle("block_scroll");
     setIsActive((isActive: boolean) => !isActive);
     setFilterOptions((filterOptions: FilterOptionsType) => ({
       ...filterOptions,
@@ -83,6 +84,7 @@ export const FiltersSelects = ({
   };
 
   const onCloseSelects = () => {
+    document.body.classList.toggle("block_scroll");
     setIsActive((isActive: boolean) => !isActive);
     setValues({
       species: filterOptions.species,

@@ -12,6 +12,7 @@ type TProps = {
 
 export const FiltersButton = ({ setIsActive }: TProps) => {
   const handleButton = () => {
+    document.body.classList.toggle("block_scroll");
     setIsActive((isActive: boolean) => !isActive);
   };
 

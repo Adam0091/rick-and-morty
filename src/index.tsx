@@ -8,6 +8,18 @@ import reset from "styled-reset";
 import { normalize } from "styled-normalize";
 
 const Global = createGlobalStyle`
+  body {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  body.block_scroll{
+    height: 100%;
+    overflow: hidden;
+  }
   * {
     box-sizing: border-box;
     font-family: "Roboto";

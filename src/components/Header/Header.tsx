@@ -15,6 +15,7 @@ export const Header = () => {
   const [isActive, setIsActive] = useState(false);
 
   const handlerBurger = () => {
+    document.body.classList.toggle("block_scroll");
     setIsActive(!isActive);
   };
 

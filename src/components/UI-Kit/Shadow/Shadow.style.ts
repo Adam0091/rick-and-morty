@@ -6,7 +6,7 @@ export const PageShadow = styled.div<{ isActive: boolean }>`
     top: 0;
     right: 0;
     width: ${({ isActive }) => (isActive ? "100%" : "0")};
-    height: 100%;
+    height: 300%;
     z-index: 3;
     background: rgba(41, 41, 41, 0.6);
     transition: all 0.3s;
