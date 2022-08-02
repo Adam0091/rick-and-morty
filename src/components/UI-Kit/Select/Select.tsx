@@ -3,7 +3,7 @@ import { TextField } from "@mui/material";
 import { SelectStyle } from "./Select.style";
 import { useState } from "react";
 
-const Select = ({ options, label, value, setValue }) => {
+const Select = ({ options, label, value, setValue }: any) => {
   const [inputValue, setInputValue] = useState("");
 
   return (

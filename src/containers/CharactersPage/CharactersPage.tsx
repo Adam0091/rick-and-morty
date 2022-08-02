@@ -2,11 +2,11 @@ import { useEffect, useState } from "react";
 import { useQuery } from "@apollo/client";
 import { CircularProgress } from "@mui/material";
 
-import { Container } from "@components/Container/Container";
-import CharactersList from "@components/CharactersList";
-import CharactersFilters from "@components/CharactersFilters";
+import { Container } from "@/components/Container/Container.style";
+import CharactersList from "@/components/CharactersList";
+import CharactersFilters from "@/components/CharactersFilters";
 
-import { GET_CHARACTERS } from "@utils/network";
+import { GET_CHARACTERS } from "@/utils/network";
 
 import {
   ButtonStyle,
@@ -35,20 +35,21 @@ const CharactersPage = () => {
 
   const [items, setItems] = useState([]);
   const [visible, setVisible] = useState(8);
-  const ids = new Array(826).fill().map((_, i) => i + 1);
+  const ids = new Array(826).fill(1).map((_, i) => i + 1);
   const { loading, error, data } = useQuery(GET_CHARACTERS, {
     variables: { ids },
     onCompleted: (data) => {
       setItems(data.charactersByIds);
+      console.log(data);
       setSelectOptions({
         species: Array.from(
-          new Set(data.charactersByIds.map((chracter) => chracter.species))
+          new Set(data.charactersByIds.map((chracter: any) => chracter.species))
         ),
         gender: Array.from(
-          new Set(data.charactersByIds.map((chracter) => chracter.gender))
+          new Set(data.charactersByIds.map((chracter: any) => chracter.gender))
         ),
         status: Array.from(
-          new Set(data.charactersByIds.map((chracter) => chracter.status))
+          new Set(data.charactersByIds.map((chracter: any) => chracter.status))
         ),
       });
     },
@@ -64,20 +65,20 @@ const CharactersPage = () => {
     let result = data.charactersByIds;
 
     if (filterOptions.name)
-      result = result.filter((element) =>
+      result = result.filter((element: any) =>
         element.name.includes(filterOptions.name)
       );
     if (filterOptions.gender)
       result = result.filter(
-        (element) => element.gender === filterOptions.gender
+        (element: any) => element.gender === filterOptions.gender
       );
     if (filterOptions.species)
       result = result.filter(
-        (element) => element.species === filterOptions.species
+        (element: any) => element.species === filterOptions.species
       );
     if (filterOptions.status)
       result = result.filter(
-        (element) => element.status === filterOptions.status
+        (element: any) => element.status === filterOptions.status
       );
 
     setVisible(8);

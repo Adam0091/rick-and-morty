@@ -23,11 +23,11 @@ export const CharacterWrapper = styled.div`
   }
 `;
 
-export const CharacterImage = styled.div`
+export const CharacterImage = styled.div<{Image: any}>`
   width: 100%;
   height: 240px;
 
-  background-image: ${({ image }) => `url("${image}")`};
+  background-image: ${({ Image }) => Image && `url("${Image}")`};
   background-repeat: no-repeat;
   background-size: cover;
 `;

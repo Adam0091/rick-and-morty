@@ -21,7 +21,7 @@ const FiltersSelects = ({
   setFilterOptions,
   isActive,
   setIsActive,
-}) => {
+}: any) => {
   const selects = [
     {
       label: "Species",
@@ -43,7 +43,7 @@ const FiltersSelects = ({
     },
   ];
 
-  const handleSelect = (value, type) => {
+  const handleSelect = (value: any, type: string) => {
     if (window.innerWidth > 767) {
       setValues({
         ...values,
@@ -79,10 +79,10 @@ const FiltersSelects = ({
   };
 
   return (
-    <WrapperSelects isActive={isActive}>
+    <WrapperSelects IsActive={isActive}>
       <WrapperSelectsHeader>
         <SelectsHeaderTitle>Filters</SelectsHeaderTitle>
-        <SelectHeaderCross onClick={() => onCloseSelects(!isActive)}>
+        <SelectHeaderCross onClick={() => onCloseSelects()}>
           <img src={crossIcon} alt="cross" />
         </SelectHeaderCross>
       </WrapperSelectsHeader>

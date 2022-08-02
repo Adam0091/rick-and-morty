@@ -7,7 +7,7 @@ import {
 
 import filterIcon from "./img/filterIcon.svg";
 
-const FiltersButton = ({ isActive, setIsActive }) => {
+const FiltersButton = ({ isActive, setIsActive }: any) => {
   return (
     <WrapperFiltersButton onClick={() => setIsActive(!isActive)}>
       <FiltersButtonStyle>

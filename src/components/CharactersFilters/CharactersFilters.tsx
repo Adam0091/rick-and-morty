@@ -12,7 +12,7 @@ const CharactersFilters = ({
   selectOption,
   filterOptions,
   setFilterOptions,
-}) => {
+}: any) => {
   const [isActive, setIsActive] = useState(false);
   const [values, setValues] = useState({
     species: null,

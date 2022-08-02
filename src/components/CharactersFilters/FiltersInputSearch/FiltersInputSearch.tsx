@@ -4,7 +4,7 @@ import { WrapperInputSearch } from "./FiltersInputSearch.style";
 
 import searchIcon from "./img/searchIcon.svg";
 
-const FiltersInputSearch = ({ filterOptions, setFilterOptions }) => {
+const FiltersInputSearch = ({ filterOptions, setFilterOptions }: any) => {
   return (
     <WrapperInputSearch>
       <img src={searchIcon} alt="search icon" />

@@ -1,9 +1,8 @@
-import PropTypes from "prop-types";
-import CharacterCard from "@components/CharacterCard";
+import CharacterCard from "@/components/CharacterCard";
 
 import { CharactersWrapper } from "./CharactersList.style";
 
-const CharactersList = ({ characters, visible }) => {
+const CharactersList = ({ characters, visible } : any) => {
   if (characters.length === 0)
     return (
       <CharactersWrapper>
@@ -13,16 +12,11 @@ const CharactersList = ({ characters, visible }) => {
 
   return (
     <CharactersWrapper>
-      {characters.slice(0, visible).map((character) => (
+      {characters.slice(0, visible).map((character: any) => (
         <CharacterCard key={character.id} character={character} />
       ))}
     </CharactersWrapper>
   );
-};
-
-CharactersList.propTypes = {
-  characters: PropTypes.array,
-  visible: PropTypes.number,
 };
 
 export default CharactersList;

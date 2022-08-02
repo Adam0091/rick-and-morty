@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const WrapperSelects = styled.div`
+export const WrapperSelects = styled.div<{IsActive: boolean}>`
   flex: 0 1 75%;
   width: 100%;
 
@@ -11,7 +11,7 @@ export const WrapperSelects = styled.div`
   row-gap: 20px;
 
   @media screen and (max-width: 767px) {
-    display: ${({ isActive }) => (isActive ? "flex" : "none")};
+    display: ${({ IsActive }) => (IsActive ? "flex" : "none")};
     position: fixed;
     width: 100%;
     box-sizing: border-box;

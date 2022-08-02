@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 
 import { BurgerContainer } from "./Burger.style";
 
-const Burger = ({ isActive, setIsActive }) => {
+const Burger = ({ isActive, setIsActive }: any) => {
   return (
     <BurgerContainer isActive={isActive} onClick={() => setIsActive(!isActive)}>
       <span></span>

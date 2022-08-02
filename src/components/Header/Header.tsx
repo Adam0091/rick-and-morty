@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
-import { Container } from "@components/Container/Container";
+import { Container } from "@/components/Container/Container.style";
 import Burger from "./Burger";
 import {
   HeaderContainer,
@@ -14,8 +14,8 @@ import logo from "./img/header_logo.png";
 const Header = () => {
   const [isActive, setIsActive] = useState(false);
 
-  const handlerBurger = (value) => {
-    setIsActive(value);
+  const handlerBurger = () => {
+    setIsActive(!isActive);
   };
 
   return (
@@ -26,7 +26,7 @@ const Header = () => {
           <NavContainer>
             <ListStyle
               isActive={isActive}
-              onClick={() => handlerBurger(!isActive)}
+              onClick={() => handlerBurger()}
             >
               <li>
                 <NavLink to="">Characters</NavLink>
