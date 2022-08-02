@@ -4,7 +4,7 @@ import {
   FiltersButtonIcon,
 } from "./FiltersButton.style";
 
-import filterIcon from "./img/filterIcon.svg";
+import filterIcon from "@/assets/images/filterIcon.svg";
 
 export const FiltersButton = ({ isActive, setIsActive }: any) => {
   return (

@@ -9,7 +9,7 @@ import {
   WrapperSelectsHeader,
 } from "./FiltersSelects.style";
 
-import crossIcon from "./img/crossIcon.svg";
+import crossIcon from "@/assets/images/crossIcon.svg";
 
 export const FiltersSelects = ({
   values,
@@ -80,7 +80,7 @@ export const FiltersSelects = ({
     <WrapperSelects IsActive={isActive}>
       <WrapperSelectsHeader>
         <SelectsHeaderTitle>Filters</SelectsHeaderTitle>
-        <SelectHeaderCross onClick={() => onCloseSelects()}>
+        <SelectHeaderCross onClick={onCloseSelects}>
           <img src={crossIcon} alt="cross" />
         </SelectHeaderCross>
       </WrapperSelectsHeader>

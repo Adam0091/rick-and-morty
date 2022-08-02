@@ -1,6 +1,6 @@
 import { WrapperInputSearch } from "./FiltersInputSearch.style";
 
-import searchIcon from "./img/searchIcon.svg";
+import searchIcon from "@/assets/images/searchIcon.svg";
 
 export const FiltersInputSearch = ({
   filterOptions,

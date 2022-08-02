@@ -16,7 +16,7 @@ import {
   LogoWrapper,
 } from "./CharactersPage.style";
 
-import logoCharacters from "./img/logo.png";
+import logoCharacters from "@/assets/images/logo.png";
 
 export const CharactersPage = () => {
   //Хранит уникальные значение силектов

@@ -9,7 +9,7 @@ import {
   NavContainer,
 } from "./Header.style";
 
-import logo from "./img/header_logo.png";
+import logo from "@/assets/images/header_logo.png";
 
 export const Header = () => {
   const [isActive, setIsActive] = useState(false);
