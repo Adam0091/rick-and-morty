@@ -4,7 +4,7 @@ import {
   CharacterWrapper,
 } from "./CharacterCard.style";
 
-const CharacterCard = ({ character } : any) => {
+const CharacterCard = ({ character }: any) => {
   const { name, image, species } = character;
 
   return (

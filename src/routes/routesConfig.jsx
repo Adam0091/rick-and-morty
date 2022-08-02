@@ -4,7 +4,7 @@ const routesConfig = [
   {
     path: "/",
     element: <CharactersPage />,
-  }
+  },
 ];
 
 export default routesConfig;

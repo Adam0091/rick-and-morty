@@ -2,7 +2,7 @@ import CharacterCard from "@/components/CharacterCard";
 
 import { CharactersWrapper } from "./CharactersList.style";
 
-const CharactersList = ({ characters, visible } : any) => {
+const CharactersList = ({ characters, visible }: any) => {
   if (characters.length === 0)
     return (
       <CharactersWrapper>

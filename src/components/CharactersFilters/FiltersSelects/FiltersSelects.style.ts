@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const WrapperSelects = styled.div<{IsActive: boolean}>`
+export const WrapperSelects = styled.div<{ IsActive: boolean }>`
   flex: 0 1 75%;
   width: 100%;
 

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const BurgerContainer = styled.div<{isActive: boolean}>`
+export const BurgerContainer = styled.div<{ isActive: boolean }>`
   display: none;
   cursor: pointer;
 

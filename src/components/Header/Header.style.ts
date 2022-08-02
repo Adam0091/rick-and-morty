@@ -18,7 +18,7 @@ export const NavContainer = styled.div`
   justify-content: space-between;
 `;
 
-export const ListStyle = styled.ul<{isActive: boolean}>`
+export const ListStyle = styled.ul<{ isActive: boolean }>`
   display: flex;
   column-gap: 35px;
 

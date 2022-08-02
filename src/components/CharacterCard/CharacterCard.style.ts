@@ -23,7 +23,7 @@ export const CharacterWrapper = styled.div`
   }
 `;
 
-export const CharacterImage = styled.div<{Image: any}>`
+export const CharacterImage = styled.div<{ Image: any }>`
   width: 100%;
   height: 240px;
 

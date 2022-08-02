@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const PageShadow = styled.div<{isActive: boolean}>`
+export const PageShadow = styled.div<{ isActive: boolean }>`
   @media screen and (max-width: 767px) {
     position: absolute;
     top: 0;
