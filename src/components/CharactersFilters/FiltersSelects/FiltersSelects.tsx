@@ -10,6 +10,21 @@ import {
 } from "./FiltersSelects.style";
 
 import crossIcon from "@/assets/images/crossIcon.svg";
+import {
+  FilterOptionsType,
+  SelectOptionsType,
+  SelectValuesType,
+} from "@/types";
+
+type TProps = {
+  values: SelectValuesType;
+  setValues: React.Dispatch<React.SetStateAction<SelectValuesType>>;
+  selectOption: SelectOptionsType;
+  filterOptions: FilterOptionsType;
+  setFilterOptions: React.Dispatch<React.SetStateAction<FilterOptionsType>>;
+  isActive: boolean;
+  setIsActive: React.Dispatch<React.SetStateAction<boolean>>;
+};
 
 export const FiltersSelects = ({
   values,
@@ -19,7 +34,7 @@ export const FiltersSelects = ({
   setFilterOptions,
   isActive,
   setIsActive,
-}: any) => {
+}: TProps) => {
   const selects = [
     {
       label: "Species",
@@ -41,18 +56,18 @@ export const FiltersSelects = ({
     },
   ];
 
-  const handleSelect = (value: any, type: string) => {
+  const handleSelect = (value: string | null, type: string) => {
     if (window.innerWidth > 767) {
-      setValues((values: any) => ({
+      setValues((values: SelectValuesType) => ({
         ...values,
         [type]: value,
       }));
-      setFilterOptions((filterOptions: any) => ({
+      setFilterOptions((filterOptions: FilterOptionsType) => ({
         ...filterOptions,
         [type]: value,
       }));
     } else {
-      setValues((values: any) => ({
+      setValues((values: SelectValuesType) => ({
         ...values,
         [type]: value,
       }));
@@ -61,7 +76,7 @@ export const FiltersSelects = ({
 
   const handleApplyButton = () => {
     setIsActive((isActive: boolean) => !isActive);
-    setFilterOptions((filterOptions: any) => ({
+    setFilterOptions((filterOptions: FilterOptionsType) => ({
       ...filterOptions,
       ...values,
     }));
@@ -91,7 +106,7 @@ export const FiltersSelects = ({
           options={select.option}
           label={select.label}
           value={select.value}
-          setValue={(value: any) => handleSelect(value, select.type)}
+          setValue={(value: string | null) => handleSelect(value, select.type)}
         />
       ))}
 

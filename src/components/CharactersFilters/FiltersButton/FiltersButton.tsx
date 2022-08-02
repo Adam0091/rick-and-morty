@@ -6,7 +6,11 @@ import {
 
 import filterIcon from "@/assets/images/filterIcon.svg";
 
-export const FiltersButton = ({ setIsActive }: any) => {
+type TProps = {
+  setIsActive: React.Dispatch<React.SetStateAction<boolean>>;
+};
+
+export const FiltersButton = ({ setIsActive }: TProps) => {
   const handleButton = () => {
     setIsActive((isActive: boolean) => !isActive);
   };

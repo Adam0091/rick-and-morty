@@ -1,8 +1,13 @@
 import { BurgerContainer } from "./Burger.style";
 
-export const Burger = ({ isActive, setIsActive }: any) => {
+type TProps = {
+  isActive: boolean;
+  setIsActive: React.Dispatch<React.SetStateAction<boolean>>;
+};
+
+export const Burger = ({ isActive, setIsActive }: TProps) => {
   const handleOnClickBurger = () => {
-    setIsActive((isActive: boolean) => !isActive!);
+    setIsActive((isActive: boolean) => !isActive);
   };
 
   return (

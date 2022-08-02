@@ -7,6 +7,7 @@ import { CharactersList } from "@/components/CharactersList";
 import { CharactersFilters } from "@/components/CharactersFilters";
 
 import { GET_CHARACTERS } from "@/utils/network";
+import { CharacterType, FilterOptionsType, SelectOptionsType } from "@/types";
 
 import {
   ButtonStyle,
@@ -20,13 +21,13 @@ import logoCharacters from "@/assets/images/logo.png";
 
 export const CharactersPage = () => {
   //Хранит уникальные значение силектов
-  const [selectOptions, setSelectOptions] = useState({
+  const [selectOptions, setSelectOptions] = useState<SelectOptionsType>({
     species: [],
     gender: [],
     status: [],
   });
   // Фильтры для изменения списка персонажей
-  const [filterOptions, setFilterOptions] = useState({
+  const [filterOptions, setFilterOptions] = useState<FilterOptionsType>({
     name: null,
     species: null,
     gender: null,
@@ -42,13 +43,25 @@ export const CharactersPage = () => {
       setItems(data.charactersByIds);
       setSelectOptions({
         species: Array.from(
-          new Set(data.charactersByIds.map((chracter: any) => chracter.species))
+          new Set(
+            data.charactersByIds.map(
+              (chracter: CharacterType) => chracter.species
+            )
+          )
         ),
         gender: Array.from(
-          new Set(data.charactersByIds.map((chracter: any) => chracter.gender))
+          new Set(
+            data.charactersByIds.map(
+              (chracter: CharacterType) => chracter.gender
+            )
+          )
         ),
         status: Array.from(
-          new Set(data.charactersByIds.map((chracter: any) => chracter.status))
+          new Set(
+            data.charactersByIds.map(
+              (chracter: CharacterType) => chracter.status
+            )
+          )
         ),
       });
     },
@@ -64,20 +77,20 @@ export const CharactersPage = () => {
     let result = data.charactersByIds;
 
     if (filterOptions.name)
-      result = result.filter((element: any) =>
-        element.name.includes(filterOptions.name)
+      result = result.filter((element: CharacterType) =>
+        element.name.includes(filterOptions.name as string)
       );
     if (filterOptions.gender)
       result = result.filter(
-        (element: any) => element.gender === filterOptions.gender
+        (element: CharacterType) => element.gender === filterOptions.gender
       );
     if (filterOptions.species)
       result = result.filter(
-        (element: any) => element.species === filterOptions.species
+        (element: CharacterType) => element.species === filterOptions.species
       );
     if (filterOptions.status)
       result = result.filter(
-        (element: any) => element.status === filterOptions.status
+        (element: CharacterType) => element.status === filterOptions.status
       );
 
     setVisible(8);

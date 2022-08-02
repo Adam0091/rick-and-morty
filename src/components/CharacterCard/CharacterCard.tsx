@@ -1,10 +1,15 @@
+import { CharacterType } from "@/types";
 import {
   CharacterDescription,
   CharacterImageWrapper,
   CharacterWrapper,
 } from "./CharacterCard.style";
 
-export const CharacterCard = ({ character }: any) => {
+type TProps = {
+  character: CharacterType;
+};
+
+export const CharacterCard = ({ character }: TProps) => {
   const { name, image, species } = character;
 
   return (

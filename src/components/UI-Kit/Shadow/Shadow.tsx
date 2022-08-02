@@ -1,6 +1,11 @@
 import { PageShadow } from "./Shadow.style";
 
-export const Shadow = ({ isActive, setIsActive }: any) => {
+type TProps = {
+  isActive: boolean;
+  setIsActive: React.Dispatch<React.SetStateAction<boolean>>;
+};
+
+export const Shadow = ({ isActive, setIsActive }: TProps) => {
   const handleOnClickShadow = () => {
     setIsActive((isActive: boolean) => !isActive);
   };

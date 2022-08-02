@@ -1,10 +1,15 @@
 import { WrapperInputSearch } from "./FiltersInputSearch.style";
 
 import searchIcon from "@/assets/images/searchIcon.svg";
+import { FilterOptionsType } from "@/types";
 
-export const FiltersInputSearch = ({ setFilterOptions }: any) => {
-  const handleInputSearch = (e: any) => {
-    setFilterOptions((filterOptions: any) => ({
+type TProps = {
+  setFilterOptions: React.Dispatch<React.SetStateAction<FilterOptionsType>>;
+};
+
+export const FiltersInputSearch = ({ setFilterOptions }: TProps) => {
+  const handleInputSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setFilterOptions((filterOptions: FilterOptionsType) => ({
       ...filterOptions,
       name: e.target.value,
     }));
