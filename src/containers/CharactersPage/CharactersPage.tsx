@@ -40,7 +40,6 @@ export const CharactersPage = () => {
     variables: { ids },
     onCompleted: (data) => {
       setItems(data.charactersByIds);
-      console.log(data);
       setSelectOptions({
         species: Array.from(
           new Set(data.charactersByIds.map((chracter: any) => chracter.species))
