@@ -23,10 +23,7 @@ export const CharactersFilters = ({
     <>
       <Shadow isActive={isActive} setIsActive={setIsActive} />
       <FiltersWrapper>
-        <FiltersInputSearch
-          filterOptions={filterOptions}
-          setFilterOptions={setFilterOptions}
-        />
+        <FiltersInputSearch setFilterOptions={setFilterOptions} />
         <FiltersButton isActive={isActive} setIsActive={setIsActive} />
         <FiltersSelects
           values={values}
