@@ -8,6 +8,10 @@ import reset from "styled-reset";
 import { normalize } from "styled-normalize";
 
 const Global = createGlobalStyle`
+  * {
+    box-sizing: border-box;
+    font-family: "Roboto";
+  }
   ${reset};
   ${normalize};
 `;

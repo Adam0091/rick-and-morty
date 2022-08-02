@@ -9,10 +9,6 @@ export const PageStyle = styled.div`
   left: 0;
   display: flex;
   flex-direction: column;
-
-  * {
-    box-sizing: border-box;
-  }
 `;
 
 export const PageContainer = styled.div`
