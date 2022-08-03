@@ -1,6 +1,6 @@
 import { WrapperInputSearch } from "./FiltersInputSearch.style";
 
-import searchIcon from "@/assets/images/searchIcon.svg";
+import searchIcon from "@assets/images/searchIcon.svg";
 import { FilterOptionsType } from "@/types";
 
 type TProps = {

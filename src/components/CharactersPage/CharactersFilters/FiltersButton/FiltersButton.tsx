@@ -4,7 +4,7 @@ import {
   FiltersButtonIcon,
 } from "./FiltersButton.style";
 
-import filterIcon from "@/assets/images/filterIcon.svg";
+import filterIcon from "@assets/images/filterIcon.svg";
 
 type TProps = {
   setIsActive: React.Dispatch<React.SetStateAction<boolean>>;

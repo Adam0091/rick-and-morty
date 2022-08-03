@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
-import { Container } from "@/components/Container/Container.style";
+import { Container } from "@components/Container/Container.style";
 import { Burger } from "./Burger";
 import {
   HeaderContainer,
@@ -9,13 +9,14 @@ import {
   NavContainer,
 } from "./Header.style";
 
-import logo from "@/assets/images/header_logo.png";
+import logo from "@assets/images/header_logo.png";
 
 export const Header = () => {
   const [isActive, setIsActive] = useState(false);
 
   const handlerBurger = () => {
-    document.body.classList.toggle("block_scroll");
+    if (window.innerWidth <= 767)
+      document.body.classList.toggle("block_scroll");
     setIsActive(!isActive);
   };
 
@@ -27,7 +28,7 @@ export const Header = () => {
           <NavContainer>
             <ListStyle isActive={isActive} onClick={handlerBurger}>
               <li>
-                <NavLink to="">Characters</NavLink>
+                <NavLink to="characters">Characters</NavLink>
               </li>
               <li>
                 <NavLink to="">Locations</NavLink>

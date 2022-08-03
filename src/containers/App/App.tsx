@@ -1,11 +1,11 @@
 import { Routes, Route, HashRouter } from "react-router-dom";
 import { ApolloProvider, InMemoryCache, ApolloClient } from "@apollo/client";
 
-import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
-import routesConfig from "@/routes/routesConfig";
+import { Header } from "@components/Header";
+import { Footer } from "@components/Footer";
+import routesConfig from "@routes/routesConfig";
 
-import { BASE_URL } from "@/constants/api";
+import { BASE_URL } from "@constants/api";
 
 import { PageStyle } from "./App.style";
 

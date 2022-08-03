@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const CharactersWrapper = styled.div`
   min-height: 350px;
@@ -29,5 +30,16 @@ export const CharactersWrapper = styled.div`
 
   @media screen and (max-width: 570px) {
     justify-content: center;
+  }
+`;
+
+export const StyledLink = styled(Link)`
+  text-decoration: none;
+  &:focus,
+  &:hover,
+  &:visited,
+  &:link,
+  &:active {
+    text-decoration: none;
   }
 `;
