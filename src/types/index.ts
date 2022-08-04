@@ -25,3 +25,16 @@ export type SelectValuesType = {
   gender: null | string;
   status: null | string;
 };
+
+export type HeaderCharacterType = {
+  name: null | string;
+  image: null | string;
+};
+
+export type InfoCharacterType = {
+  [key: string]: {
+    isLink?: boolean;
+    value: string;
+    path?: string;
+  };
+};

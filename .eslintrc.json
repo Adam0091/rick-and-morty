@@ -19,6 +19,13 @@
     "rules": {
         "no-debugger": "off",
         "no-console": 0,
-        "no-nonoctal-decimal-escape": "off"
+        "no-nonoctal-decimal-escape": "off",
+        "prettier/prettier": [
+            "error",
+            {
+                "endOfLine": "auto"
+            }
+        ]
     }
+
 }

@@ -2,11 +2,11 @@ import { useEffect, useState } from "react";
 import { useQuery } from "@apollo/client";
 import { CircularProgress } from "@mui/material";
 
-import { Container } from "@/components/Container/Container.style";
-import { CharactersList } from "@/components/CharactersList";
-import { CharactersFilters } from "@/components/CharactersFilters";
+import { Container } from "@components/Container/Container.style";
+import { CharactersList } from "@components/CharactersPage/CharactersList";
+import { CharactersFilters } from "@components/CharactersPage/CharactersFilters";
 
-import { GET_CHARACTERS } from "@/utils/network";
+import { GET_CHARACTERS } from "@utils/network";
 import { CharacterType, FilterOptionsType, SelectOptionsType } from "@/types";
 
 import {

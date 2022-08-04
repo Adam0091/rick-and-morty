@@ -1,4 +1,4 @@
-import { Select } from "./../../UI-Kit/Select/Select";
+import { Select } from "@components/UI-Kit/Select/Select";
 
 import {
   ApplyButton,
@@ -9,7 +9,7 @@ import {
   WrapperSelectsHeader,
 } from "./FiltersSelects.style";
 
-import crossIcon from "@/assets/images/crossIcon.svg";
+import crossIcon from "@assets/images/crossIcon.svg";
 import {
   FilterOptionsType,
   SelectOptionsType,

@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { Shadow } from "../UI-Kit/Shadow";
+import { Shadow } from "@components/UI-Kit/Shadow";
 import { FiltersButton } from "./FiltersButton";
 import { FiltersInputSearch } from "./FiltersInputSearch";
 import { FiltersSelects } from "./FiltersSelects/FiltersSelects";
