@@ -5,6 +5,7 @@ export const CharacterWrapper = styled.div`
   flex-direction: column;
   flex-wrap: wrap;
   width: 100%;
+  height: 100%;
 
   max-width: 240px;
 
