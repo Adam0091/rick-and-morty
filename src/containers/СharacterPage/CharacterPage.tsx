@@ -9,6 +9,8 @@ import { Container } from "@components/Container/Container.style";
 import { InformationItem } from "@components/CharacterPage/InformationItem";
 import { StyledLink } from "@components/CharactersPage/CharactersList/CharactersList.style";
 
+import { HeaderCharacterType, InfoCharacterType } from "@/types";
+
 import {
   CharacterDiscription,
   CharacterHeader,
@@ -31,8 +33,11 @@ import arrowBack from "@assets/images/arrowBack.svg";
 
 export const CharacterPage = () => {
   const { id } = useParams();
-  const [headerCharacter, setHeaderCharacter] = useState<any>({});
-  const [infoCharacter, setInfoCharacter] = useState<any>({});
+  const [headerCharacter, setHeaderCharacter] = useState<HeaderCharacterType>({
+    name: null,
+    image: null,
+  });
+  const [infoCharacter, setInfoCharacter] = useState<InfoCharacterType>({});
   const [episodesCharacter, setEpisodesCharacter] = useState([]);
   const navigate = useNavigate();
 
@@ -41,7 +46,7 @@ export const CharacterPage = () => {
     navigate(-1);
   };
 
-  const { loading, error, data } = useQuery(GET_CHARACTER, {
+  const { loading } = useQuery(GET_CHARACTER, {
     variables: { id },
     onCompleted: (data) => {
       const { character } = data;
@@ -58,11 +63,21 @@ export const CharacterPage = () => {
       } = character;
 
       const characterInfo = {
-        Gender: gender,
-        Status: status,
-        Species: species,
-        Origin: origin.name,
-        Type: type === "" ? "Unknow" : type,
+        Gender: {
+          value: gender,
+        },
+        Status: {
+          value: status,
+        },
+        Species: {
+          value: species,
+        },
+        Origin: {
+          value: origin.name,
+        },
+        Type: {
+          value: type === "" ? "Unknow" : type,
+        },
         Location: {
           isLink: true,
           value: location.name,
@@ -96,7 +111,10 @@ export const CharacterPage = () => {
         </StyledBackLink>
         <CharacterHeader>
           <CharacterLogo>
-            <img src={headerCharacter.image} alt={headerCharacter.name} />
+            <img
+              src={headerCharacter.image as string}
+              alt={headerCharacter.name as string}
+            />
           </CharacterLogo>
           <CharacterTitle>{headerCharacter.name}</CharacterTitle>
         </CharacterHeader>
@@ -106,7 +124,7 @@ export const CharacterPage = () => {
             <ul className="informations__list">
               {Object.keys(infoCharacter).map((key) =>
                 infoCharacter[key].isLink ? (
-                  <StyledLink to={infoCharacter[key].path} key={key}>
+                  <StyledLink to={infoCharacter[key].path as string} key={key}>
                     <InformationItem
                       name={key}
                       value={infoCharacter[key].value}
@@ -116,7 +134,7 @@ export const CharacterPage = () => {
                 ) : (
                   <InformationItem
                     name={key}
-                    value={infoCharacter[key]}
+                    value={infoCharacter[key].value}
                     key={key}
                     isLink={false}
                   />
