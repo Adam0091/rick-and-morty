@@ -9,6 +9,8 @@ import { Container } from "@components/Container/Container.style";
 import { InformationItem } from "@components/CharacterPage/InformationItem";
 import { StyledLink } from "@components/CharactersPage/CharactersList/CharactersList.style";
 
+import { routePath } from "@constants/routePath";
+
 import { HeaderCharacterType, InfoCharacterType } from "@/types";
 
 import {
@@ -23,13 +25,15 @@ import {
   DiscriptionName,
   DiscriptionTitle,
   DiscriptionValue,
-  DiscriptionListItemArrow,
+  DiscriptionButtonItemArrow,
   ImageArrowBack,
   StyledBackLink,
+  DiscriptionList,
 } from "./CharacterPage.style";
 import { CircularContainer } from "@containers/CharactersPage/CharactersPage.style";
 
 import arrowBack from "@assets/images/arrowBack.svg";
+import arrowNext from "@assets/images/arrowNext.svg";
 
 export const CharacterPage = () => {
   const { id } = useParams();
@@ -81,10 +85,9 @@ export const CharacterPage = () => {
         Location: {
           isLink: true,
           value: location.name,
-          path: "",
+          path: routePath.location,
         },
       };
-
       setHeaderCharacter({ name, image });
       setInfoCharacter(characterInfo);
       setEpisodesCharacter(episode);
@@ -121,10 +124,10 @@ export const CharacterPage = () => {
         <CharacterDiscription>
           <DiscriptionItem>
             <DiscriptionTitle>Informations</DiscriptionTitle>
-            <ul className="informations__list">
+            <DiscriptionList>
               {Object.keys(infoCharacter).map((key) =>
                 infoCharacter[key].isLink ? (
-                  <StyledLink to={infoCharacter[key].path as string} key={key}>
+                  <StyledLink to={infoCharacter[key].path || ""} key={key}>
                     <InformationItem
                       name={key}
                       value={infoCharacter[key].value}
@@ -140,26 +143,28 @@ export const CharacterPage = () => {
                   />
                 )
               )}
-            </ul>
+            </DiscriptionList>
           </DiscriptionItem>
           <DiscriptionItem>
             <DiscriptionTitle>Episodes</DiscriptionTitle>
-            <ul className="episodes__list">
-              <StyledLink to="">
-                {episodesCharacter
-                  .slice(0, 4)
-                  .map(({ id, name, air_date, episode }) => (
+            <DiscriptionList>
+              {episodesCharacter
+                .slice(0, 4)
+                .map(({ id, name, air_date, episode }) => (
+                  <StyledLink to={`${routePath.episode}/${id}`}>
                     <DiscriptionListItem key={id}>
                       <DiscriptionListItemWrapper>
                         <DiscriptionName>{episode}</DiscriptionName>
                         <DiscriptionValue>{name}</DiscriptionValue>
                         <DiscriptionValue>{air_date}</DiscriptionValue>
                       </DiscriptionListItemWrapper>
-                      <DiscriptionListItemArrow />
+                      <DiscriptionButtonItemArrow>
+                        <img src={arrowNext} alt="arrow next button" />
+                      </DiscriptionButtonItemArrow>
                     </DiscriptionListItem>
-                  ))}
-              </StyledLink>
-            </ul>
+                  </StyledLink>
+                ))}
+            </DiscriptionList>
           </DiscriptionItem>
         </CharacterDiscription>
       </CharacterWrapper>

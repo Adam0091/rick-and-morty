@@ -12,7 +12,7 @@ export const HeaderContainer = styled.div`
   justify-content: space-between;
 `;
 
-export const NavContainer = styled.div`
+export const NavContainer = styled.nav`
   display: flex;
   align-items: center;
   justify-content: space-between;

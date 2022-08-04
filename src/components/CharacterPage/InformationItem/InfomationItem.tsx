@@ -1,10 +1,12 @@
 import {
   DiscriptionListItem,
-  DiscriptionListItemArrow,
+  DiscriptionButtonItemArrow,
   DiscriptionListItemWrapper,
   DiscriptionName,
   DiscriptionValue,
 } from "@containers/СharacterPage/CharacterPage.style";
+
+import arrowNext from "@assets/images/arrowNext.svg";
 
 type TProps = {
   name: string;
@@ -18,6 +20,10 @@ export const InformationItem = ({ name, value, isLink }: TProps) => (
       <DiscriptionName>{name}</DiscriptionName>
       <DiscriptionValue>{value}</DiscriptionValue>
     </DiscriptionListItemWrapper>
-    {isLink && <DiscriptionListItemArrow />}
+    {isLink && (
+      <DiscriptionButtonItemArrow>
+        <img src={arrowNext} alt="arrow next button" />
+      </DiscriptionButtonItemArrow>
+    )}
   </DiscriptionListItem>
 );

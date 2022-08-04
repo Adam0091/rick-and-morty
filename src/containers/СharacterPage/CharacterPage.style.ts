@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import arrowNext from "@assets/images/arrowNext.svg";
 
 export const CharacterWrapper = styled.div`
   position: relative;
@@ -67,7 +66,7 @@ export const CharacterLogo = styled.div`
   }
 `;
 
-export const CharacterTitle = styled.div`
+export const CharacterTitle = styled.span`
   font-weight: 400;
   font-size: 48px;
   line-height: 56px;
@@ -89,6 +88,14 @@ export const CharacterDiscription = styled.div`
   @media (max-width: 768px) {
     flex-direction: column;
     row-gap: 42px;
+  }
+`;
+
+export const DiscriptionList = styled.ul`
+  margin-top: 45px;
+
+  @media (max-width: 768px) {
+    margin-top: 16px;
   }
 `;
 
@@ -116,18 +123,25 @@ export const DiscriptionListItem = styled.li`
   }
 `;
 
-export const DiscriptionListItemWrapper = styled.div``;
+export const DiscriptionListItemWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
 
-export const DiscriptionListItemArrow = styled.div`
+export const DiscriptionButtonItemArrow = styled.button`
   width: 24px;
   height: 24px;
 
-  background-image: url("${arrowNext}");
-  background-repeat: no-repeat;
-  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  background-color: inherit;
+  cursor: pointer;
 `;
 
-export const DiscriptionTitle = styled.div`
+export const DiscriptionTitle = styled.span`
   font-weight: 500;
   font-size: 20px;
   line-height: 24px;
@@ -138,7 +152,7 @@ export const DiscriptionTitle = styled.div`
   margin-bottom: 36px;
 `;
 
-export const DiscriptionName = styled.div`
+export const DiscriptionName = styled.span`
   font-weight: 700;
   font-size: 16px;
   line-height: 24px;
@@ -147,7 +161,7 @@ export const DiscriptionName = styled.div`
   color: #081f32;
 `;
 
-export const DiscriptionValue = styled.div`
+export const DiscriptionValue = styled.span`
   font-weight: 400;
   font-size: 14px;
   line-height: 20px;

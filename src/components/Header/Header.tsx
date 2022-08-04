@@ -1,7 +1,10 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
-import { Container } from "@components/Container/Container.style";
+import { routePath } from "@constants/routePath";
+
 import { Burger } from "./Burger";
+
+import { Container } from "@components/Container/Container.style";
 import {
   HeaderContainer,
   HeaderWrapper,
@@ -28,13 +31,13 @@ export const Header = () => {
           <NavContainer>
             <ListStyle isActive={isActive} onClick={handlerBurger}>
               <li>
-                <NavLink to="characters">Characters</NavLink>
+                <NavLink to={routePath.characters}>Characters</NavLink>
               </li>
               <li>
-                <NavLink to="">Locations</NavLink>
+                <NavLink to={routePath.locations}>Locations</NavLink>
               </li>
               <li>
-                <NavLink to="">Episodes</NavLink>
+                <NavLink to={routePath.episodes}>Episodes</NavLink>
               </li>
             </ListStyle>
             <Burger isActive={isActive} setIsActive={handlerBurger} />
