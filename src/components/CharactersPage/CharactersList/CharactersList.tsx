@@ -1,5 +1,3 @@
-import { Link } from "react-router-dom";
-
 import { CharacterCard } from "@components/CharactersPage/CharacterCard";
 import { CharacterType } from "@/types";
 
@@ -21,8 +19,8 @@ export const CharactersList = ({ characters, visible }: TProps) => {
   return (
     <CharactersWrapper>
       {characters.slice(0, visible).map((character: CharacterType) => (
-        <StyledLink to={`/character/${character.id}`}>
-          <CharacterCard key={character.id} character={character} />
+        <StyledLink to={`/character/${character.id}`} key={character.id}>
+          <CharacterCard character={character} />
         </StyledLink>
       ))}
     </CharactersWrapper>
