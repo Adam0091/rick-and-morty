@@ -3,7 +3,6 @@ import { useQuery } from "@apollo/client";
 
 import { GET_LOCATIONS } from "@/utils/network";
 
-import { CircularProgress } from "@mui/material";
 import { LocationsList } from "@components/LocationsPage/LocationsList";
 import { LocationsFilter } from "@components/LocationsPage/LocationsFilter";
 
@@ -13,14 +12,8 @@ import {
   LocationType,
 } from "@/types";
 
-import { Container } from "@/styled_componets/Container.style";
-import { LogoWrapper } from "./LocationsPage.style";
-import { Content } from "@/styled_componets/Content.style";
-
 import logoLocations from "@assets/images/logoLocations.png";
-import { CircularContainer } from "@/styled_componets/CircularContainer.style";
-import { ButtonWrapper } from "@/styled_componets/ButtonWrapper.style";
-import { ButtonStyle } from "@/styled_componets/ButtonStyle.style";
+import { PageTemplate } from "@/components/PageTemplate";
 
 export const LocationsPage = () => {
   //Хранит уникальные значение силектов
@@ -98,34 +91,22 @@ export const LocationsPage = () => {
   if (error) {
     return <p>Error :(</p>;
   }
-
   return (
-    <Container>
-      <div>
-        <LogoWrapper>
-          <img src={logoLocations} alt="rick and morty" />
-        </LogoWrapper>
-
-        <Content>
-          <LocationsFilter
-            selectOption={selectOptions}
-            filterOptions={filterOptions}
-            setFilterOptions={setFilterOptions}
-          />
-
-          {loading ? (
-            <CircularContainer>
-              <CircularProgress />
-            </CircularContainer>
-          ) : (
-            <LocationsList locations={items} visible={visible} />
-          )}
-
-          <ButtonWrapper>
-            <ButtonStyle onClick={showMoreItems}>LOAD MORE</ButtonStyle>
-          </ButtonWrapper>
-        </Content>
-      </div>
-    </Container>
+    <PageTemplate
+      FilterComponent={() => (
+        <LocationsFilter
+          selectOption={selectOptions}
+          filterOptions={filterOptions}
+          setFilterOptions={setFilterOptions}
+        />
+      )}
+      ListComponent={() => (
+        <LocationsList locations={items} visible={visible} />
+      )}
+      logo={logoLocations}
+      logoAlt="rick and morty"
+      loading={loading}
+      showMoreItems={showMoreItems}
+    />
   );
 };

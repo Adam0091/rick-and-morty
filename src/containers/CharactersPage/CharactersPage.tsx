@@ -1,8 +1,5 @@
 import { useEffect, useState } from "react";
 import { useQuery } from "@apollo/client";
-import { CircularProgress } from "@mui/material";
-
-import { Container } from "@/styled_componets/Container.style";
 import { CharactersList } from "@components/CharactersPage/CharactersList";
 import { CharactersFilters } from "@components/CharactersPage/CharactersFilters";
 
@@ -13,13 +10,8 @@ import {
   CharactersSelectOptionsType,
 } from "@/types";
 
-import { LogoWrapper } from "./CharactersPage.style";
-
 import logoCharacters from "@/assets/images/logoCharacters.png";
-import { Content } from "@/styled_componets/Content.style";
-import { CircularContainer } from "@/styled_componets/CircularContainer.style";
-import { ButtonWrapper } from "@/styled_componets/ButtonWrapper.style";
-import { ButtonStyle } from "@/styled_componets/ButtonStyle.style";
+import { PageTemplate } from "@/components/PageTemplate";
 
 export const CharactersPage = () => {
   //Хранит уникальные значение силектов
@@ -109,33 +101,52 @@ export const CharactersPage = () => {
     return <p>Error :(</p>;
   }
 
+  // return (
+  //   <Container>
+  //     <div>
+  //       <LogoWrapper>
+  //         <img src={logoCharacters} alt="rick and morty" />
+  //       </LogoWrapper>
+
+  //       <Content>
+  //         <CharactersFilters
+  //           selectOption={selectOptions}
+  //           filterOptions={filterOptions}
+  //           setFilterOptions={setFilterOptions}
+  //         />
+
+  //         {loading ? (
+  //           <CircularContainer>
+  //             <CircularProgress />
+  //           </CircularContainer>
+  //         ) : (
+  //           <CharactersList characters={items} visible={visible} />
+  //         )}
+
+  //         <ButtonWrapper>
+  //           <ButtonStyle onClick={showMoreItems}>LOAD MORE</ButtonStyle>
+  //         </ButtonWrapper>
+  //       </Content>
+  //     </div>
+  //   </Container>
+  // );
+
   return (
-    <Container>
-      <div>
-        <LogoWrapper>
-          <img src={logoCharacters} alt="rick and morty" />
-        </LogoWrapper>
-
-        <Content>
-          <CharactersFilters
-            selectOption={selectOptions}
-            filterOptions={filterOptions}
-            setFilterOptions={setFilterOptions}
-          />
-
-          {loading ? (
-            <CircularContainer>
-              <CircularProgress />
-            </CircularContainer>
-          ) : (
-            <CharactersList characters={items} visible={visible} />
-          )}
-
-          <ButtonWrapper>
-            <ButtonStyle onClick={showMoreItems}>LOAD MORE</ButtonStyle>
-          </ButtonWrapper>
-        </Content>
-      </div>
-    </Container>
+    <PageTemplate
+      FilterComponent={() => (
+        <CharactersFilters
+          selectOption={selectOptions}
+          filterOptions={filterOptions}
+          setFilterOptions={setFilterOptions}
+        />
+      )}
+      ListComponent={() => (
+        <CharactersList characters={items} visible={visible} />
+      )}
+      logo={logoCharacters}
+      logoAlt="rick and morty"
+      loading={loading}
+      showMoreItems={showMoreItems}
+    />
   );
 };

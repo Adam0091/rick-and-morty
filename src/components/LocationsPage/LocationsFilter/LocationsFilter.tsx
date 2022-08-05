@@ -8,6 +8,7 @@ import { FiltersSelects } from "@components/UI-Kit/FiltersSelects";
 import { FiltersWrapper } from "@components/CharactersPage/CharactersFilters/CharactersFilters.style";
 import { LocationSelectValuesType, LocationsSelectOptionsType } from "@/types";
 import { LocationFilterOptionsType } from "@/types";
+import { LocationType } from "@/types/enum";
 
 type TProps = {
   selectOption: LocationsSelectOptionsType;
@@ -33,13 +34,13 @@ export const LocationsFilter = ({
       label: "Type",
       option: selectOption.type,
       value: values.type,
-      type: "type",
+      type: LocationType.TYPE,
     },
     {
       label: "Dimension",
       option: selectOption.dimension,
       value: values.dimension,
-      type: "dimension",
+      type: LocationType.DIMENSION,
     },
   ];
 

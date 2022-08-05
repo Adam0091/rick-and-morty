@@ -11,6 +11,7 @@ import {
   CharactersSelectOptionsType,
   CharactersSelectValuesType,
 } from "@/types";
+import { CharacterType } from "@/types/enum";
 
 type TProps = {
   selectOption: CharactersSelectOptionsType;
@@ -37,19 +38,19 @@ export const CharactersFilters = ({
       label: "Species",
       option: selectOption.species,
       value: values.species,
-      type: "species",
+      type: CharacterType.SPECIES,
     },
     {
       label: "Gender",
       option: selectOption.gender,
       value: values.gender,
-      type: "gender",
+      type: CharacterType.GENDER,
     },
     {
       label: "Status",
       option: selectOption.status,
       value: values.status,
-      type: "status",
+      type: CharacterType.STATUS,
     },
   ];
 
