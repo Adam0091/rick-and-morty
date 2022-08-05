@@ -101,48 +101,16 @@ export const CharactersPage = () => {
     return <p>Error :(</p>;
   }
 
-  // return (
-  //   <Container>
-  //     <div>
-  //       <LogoWrapper>
-  //         <img src={logoCharacters} alt="rick and morty" />
-  //       </LogoWrapper>
-
-  //       <Content>
-  //         <CharactersFilters
-  //           selectOption={selectOptions}
-  //           filterOptions={filterOptions}
-  //           setFilterOptions={setFilterOptions}
-  //         />
-
-  //         {loading ? (
-  //           <CircularContainer>
-  //             <CircularProgress />
-  //           </CircularContainer>
-  //         ) : (
-  //           <CharactersList characters={items} visible={visible} />
-  //         )}
-
-  //         <ButtonWrapper>
-  //           <ButtonStyle onClick={showMoreItems}>LOAD MORE</ButtonStyle>
-  //         </ButtonWrapper>
-  //       </Content>
-  //     </div>
-  //   </Container>
-  // );
-
   return (
     <PageTemplate
-      FilterComponent={() => (
+      FilterComponent={
         <CharactersFilters
           selectOption={selectOptions}
           filterOptions={filterOptions}
           setFilterOptions={setFilterOptions}
         />
-      )}
-      ListComponent={() => (
-        <CharactersList characters={items} visible={visible} />
-      )}
+      }
+      ListComponent={<CharactersList characters={items} visible={visible} />}
       logo={logoCharacters}
       logoAlt="rick and morty"
       loading={loading}

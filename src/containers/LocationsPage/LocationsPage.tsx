@@ -93,16 +93,14 @@ export const LocationsPage = () => {
   }
   return (
     <PageTemplate
-      FilterComponent={() => (
+      FilterComponent={
         <LocationsFilter
           selectOption={selectOptions}
           filterOptions={filterOptions}
           setFilterOptions={setFilterOptions}
         />
-      )}
-      ListComponent={() => (
-        <LocationsList locations={items} visible={visible} />
-      )}
+      }
+      ListComponent={<LocationsList locations={items} visible={visible} />}
       logo={logoLocations}
       logoAlt="rick and morty"
       loading={loading}

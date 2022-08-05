@@ -6,11 +6,10 @@ import { Content } from "@/styled_componets/Content.style";
 import { LogoWrapper } from "./PageTemplate.style";
 import { ButtonWrapper } from "@/styled_componets/ButtonWrapper.style";
 import { ButtonStyle } from "@/styled_componets/ButtonStyle.style";
-import { ReactElement } from "react";
 
 type TProps = {
-  FilterComponent: () => ReactElement;
-  ListComponent: () => ReactElement;
+  FilterComponent: JSX.Element;
+  ListComponent: JSX.Element;
   logo: string;
   logoAlt: string;
   loading: boolean;
@@ -32,14 +31,14 @@ export const PageTemplate = ({
       </LogoWrapper>
 
       <Content>
-        <FilterComponent />
+        {FilterComponent}
 
         {loading ? (
           <CircularContainer>
             <CircularProgress />
           </CircularContainer>
         ) : (
-          <ListComponent />
+          ListComponent
         )}
 
         <ButtonWrapper>
