@@ -2,37 +2,41 @@ import { useEffect, useState } from "react";
 import { useQuery } from "@apollo/client";
 import { CircularProgress } from "@mui/material";
 
-import { Container } from "@components/Container/Container.style";
+import { Container } from "@/styled_componets/Container.style";
 import { CharactersList } from "@components/CharactersPage/CharactersList";
 import { CharactersFilters } from "@components/CharactersPage/CharactersFilters";
 
 import { GET_CHARACTERS } from "@utils/network";
-import { CharacterType, FilterOptionsType, SelectOptionsType } from "@/types";
-
 import {
-  ButtonStyle,
-  ButtonWrapper,
-  CircularContainer,
-  Content,
-  LogoWrapper,
-} from "./CharactersPage.style";
+  CharacterType,
+  CharactersFilterOptionsType,
+  CharactersSelectOptionsType,
+} from "@/types";
 
-import logoCharacters from "@/assets/images/logo.png";
+import { LogoWrapper } from "./CharactersPage.style";
+
+import logoCharacters from "@/assets/images/logoCharacters.png";
+import { Content } from "@/styled_componets/Content.style";
+import { CircularContainer } from "@/styled_componets/CircularContainer.style";
+import { ButtonWrapper } from "@/styled_componets/ButtonWrapper.style";
+import { ButtonStyle } from "@/styled_componets/ButtonStyle.style";
 
 export const CharactersPage = () => {
   //Хранит уникальные значение силектов
-  const [selectOptions, setSelectOptions] = useState<SelectOptionsType>({
-    species: [],
-    gender: [],
-    status: [],
-  });
+  const [selectOptions, setSelectOptions] =
+    useState<CharactersSelectOptionsType>({
+      species: [],
+      gender: [],
+      status: [],
+    });
   // Фильтры для изменения списка персонажей
-  const [filterOptions, setFilterOptions] = useState<FilterOptionsType>({
-    name: null,
-    species: null,
-    gender: null,
-    status: null,
-  });
+  const [filterOptions, setFilterOptions] =
+    useState<CharactersFilterOptionsType>({
+      name: null,
+      species: null,
+      gender: null,
+      status: null,
+    });
 
   const [items, setItems] = useState([]);
   const [visible, setVisible] = useState(8);
