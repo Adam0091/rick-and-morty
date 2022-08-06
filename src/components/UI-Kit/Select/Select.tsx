@@ -4,14 +4,14 @@ import { SelectStyle } from "./Select.style";
 type TProps = {
   options: string[];
   label: string;
-  value: string | null;
-  setValue: (value: string | null) => void;
+  value: string;
+  setValue: (value: string) => void;
 };
 
 export const Select = ({ options, label, value, setValue }: TProps) => {
   const handleOnChangeSelect = (newValue: unknown) => {
     if (typeof newValue === "string") setValue(newValue);
-    if (newValue === null) setValue(newValue);
+    if (newValue === "") setValue(newValue);
   };
 
   return (

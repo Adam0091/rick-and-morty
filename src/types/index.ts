@@ -1,34 +1,33 @@
+export type SelectType = {
+  label: string;
+  option: string[];
+  value: string;
+  type: string;
+};
+
+// Characters
 export type CharacterType = {
   id: number | string;
+} & CharactersSelectValuesType &
+  HeaderCharacterType;
+
+export type CharactersFilterOptionsType = {
   name: string;
+} & CharactersSelectValuesType;
+
+export type CharactersSelectOptionsType = {
+  [Properties in keyof CharactersSelectValuesType]: string[];
+};
+
+export type CharactersSelectValuesType = {
   species: string;
-  status: string;
   gender: string;
-  image: string;
-};
-
-export type FilterOptionsType = {
-  name: null | string;
-  species: null | string;
-  gender: null | string;
-  status: null | string;
-};
-
-export type SelectOptionsType = {
-  species: string[] | [];
-  gender: string[] | [];
-  status: string[] | [];
-};
-
-export type SelectValuesType = {
-  species: null | string;
-  gender: null | string;
-  status: null | string;
+  status: string;
 };
 
 export type HeaderCharacterType = {
-  name: null | string;
-  image: null | string;
+  name: string;
+  image: string;
 };
 
 export type InfoCharacterType = {
@@ -37,4 +36,31 @@ export type InfoCharacterType = {
     value: string;
     path?: string;
   };
+};
+
+//Locations
+export type LocationType = {
+  id: number | string;
+  name: string;
+} & LocationSelectValuesType;
+
+export type LocationFilterOptionsType = {
+  name: string;
+} & LocationSelectValuesType;
+
+export type LocationsSelectOptionsType = {
+  [Properties in keyof LocationSelectValuesType]: string[];
+};
+
+export type LocationSelectValuesType = {
+  type: string;
+  dimension: string;
+};
+
+// Episode
+export type EpisodeType = {
+  id: string | number;
+  name: string;
+  air_date: string;
+  episode: string;
 };
