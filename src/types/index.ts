@@ -8,19 +8,12 @@ export type SelectType = {
 // Characters
 export type CharacterType = {
   id: number | string;
-  name: string;
-  species: string;
-  status: string;
-  gender: string;
-  image: string;
-};
+} & CharactersSelectValuesType &
+  HeaderCharacterType;
 
 export type CharactersFilterOptionsType = {
   name: string;
-  species: string;
-  gender: string;
-  status: string;
-};
+} & CharactersSelectValuesType;
 
 export type CharactersSelectOptionsType = {
   [Properties in keyof CharactersSelectValuesType]: string[];
@@ -49,15 +42,11 @@ export type InfoCharacterType = {
 export type LocationType = {
   id: number | string;
   name: string;
-  type: string;
-  dimension: string;
-};
+} & LocationSelectValuesType;
 
 export type LocationFilterOptionsType = {
   name: string;
-  type: string;
-  dimension: string;
-};
+} & LocationSelectValuesType;
 
 export type LocationsSelectOptionsType = {
   [Properties in keyof LocationSelectValuesType]: string[];
@@ -69,7 +58,6 @@ export type LocationSelectValuesType = {
 };
 
 // Episode
-
 export type EpisodeType = {
   id: string | number;
   name: string;
