@@ -11,7 +11,7 @@ import { CharacterType, HeaderLocationType } from "@/types";
 
 import { Container } from "@styled_componets/Container.style";
 import { CircularContainer } from "@styled_componets/CircularContainer.style";
-import { StyledBackLink } from "@styled_componets/StyledBackLink.style";
+import { StyledBackButton } from "@/styled_componets/StyledBackButton.style";
 import { ImageArrowBack } from "@containers/СharacterPage/CharacterPage.style";
 import {
   DescriptionItem,
@@ -69,10 +69,10 @@ export const LocationPage = () => {
       <LocationWrapper>
         <LocationHeader>
           <LocationTitleWrapper>
-            <StyledBackLink onClick={handleGoBack} top={"50%"}>
+            <StyledBackButton onClick={handleGoBack} top={"50%"}>
               <ImageArrowBack src={arrowBack} alt="arrow back" />
               <span>GO BACK</span>
-            </StyledBackLink>
+            </StyledBackButton>
             <LocationTitle>{headerLocation.name}</LocationTitle>
           </LocationTitleWrapper>
 

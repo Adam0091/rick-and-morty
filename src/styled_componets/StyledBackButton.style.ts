@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const StyledBackLink = styled.div<{ top: string }>`
+export const StyledBackButton = styled.button<{ top: string }>`
   position: absolute;
   top: ${({ top }) => top};
   left: 0;
@@ -21,6 +21,10 @@ export const StyledBackLink = styled.div<{ top: string }>`
   color: #000000;
 
   cursor: pointer;
+
+  background-color: inherit;
+  border: none;
+
   @media (max-width: 768px) {
     top: 0;
     transform: translateY(-40px);
