@@ -15,7 +15,7 @@ export const CharacterCard = ({ character }: TProps) => {
   return (
     <CharacterWrapper>
       <CharacterImageWrapper>
-        <img src={image} alt={image} />
+        <img src={image} alt={name} />
       </CharacterImageWrapper>
 
       <CharacterDescription>

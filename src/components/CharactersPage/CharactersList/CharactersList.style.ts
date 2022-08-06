@@ -11,8 +11,6 @@ export const CharactersWrapper = styled.div`
   row-gap: 36px;
   column-gap: 20px;
 
-  margin-top: 60px;
-
   .chracters__not_found {
     width: 100%;
 

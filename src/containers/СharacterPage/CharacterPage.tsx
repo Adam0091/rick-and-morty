@@ -5,14 +5,15 @@ import { useQuery } from "@apollo/client";
 import { GET_CHARACTER } from "@utils/network";
 
 import { CircularProgress } from "@mui/material";
-import { Container } from "@/styled_componets/Container.style";
 import { InformationItem } from "@components/CharacterPage/InformationItem";
 import { StyledLink } from "@components/CharactersPage/CharactersList/CharactersList.style";
+import { EpisodeItem } from "@components/CharacterPage/EpisodeItem";
 
 import { routePath } from "@constants/routePath";
 
 import { EpisodeType, HeaderCharacterType, InfoCharacterType } from "@/types";
 
+import { Container } from "@/styled_componets/Container.style";
 import { CircularContainer } from "@/styled_componets/CircularContainer.style";
 import {
   CharacterDiscription,
@@ -21,19 +22,13 @@ import {
   CharacterTitle,
   CharacterWrapper,
   DiscriptionItem,
-  DiscriptionListItem,
-  DiscriptionListItemWrapper,
-  DiscriptionName,
   DiscriptionTitle,
-  DiscriptionValue,
-  DiscriptionButtonItemArrow,
   ImageArrowBack,
   StyledBackLink,
   DiscriptionList,
 } from "./CharacterPage.style";
 
 import arrowBack from "@assets/images/arrowBack.svg";
-import arrowNext from "@assets/images/arrowNext.svg";
 
 export const CharacterPage = () => {
   const { id } = useParams();
@@ -85,7 +80,7 @@ export const CharacterPage = () => {
         Location: {
           isLink: true,
           value: location.name,
-          path: routePath.location,
+          path: `${routePath.location}/${location.id}`,
         },
       };
       setHeaderCharacter({ name, image });
@@ -112,12 +107,14 @@ export const CharacterPage = () => {
           <ImageArrowBack src={arrowBack} alt="arrow back" />
           <span>GO BACK</span>
         </StyledBackLink>
+
         <CharacterHeader>
           <CharacterLogo>
             <img src={headerCharacter.image} alt={headerCharacter.name} />
           </CharacterLogo>
           <CharacterTitle>{headerCharacter.name}</CharacterTitle>
         </CharacterHeader>
+
         <CharacterDiscription>
           <DiscriptionItem>
             <DiscriptionTitle>Informations</DiscriptionTitle>
@@ -142,23 +139,19 @@ export const CharacterPage = () => {
               )}
             </DiscriptionList>
           </DiscriptionItem>
+
           <DiscriptionItem>
             <DiscriptionTitle>Episodes</DiscriptionTitle>
             <DiscriptionList>
               {episodesCharacter
                 .slice(0, 4)
                 .map(({ id, name, air_date, episode }) => (
-                  <StyledLink to={`${routePath.episode}/${id}`}>
-                    <DiscriptionListItem key={id}>
-                      <DiscriptionListItemWrapper>
-                        <DiscriptionName>{episode}</DiscriptionName>
-                        <DiscriptionValue>{name}</DiscriptionValue>
-                        <DiscriptionValue>{air_date}</DiscriptionValue>
-                      </DiscriptionListItemWrapper>
-                      <DiscriptionButtonItemArrow>
-                        <img src={arrowNext} alt="arrow next button" />
-                      </DiscriptionButtonItemArrow>
-                    </DiscriptionListItem>
+                  <StyledLink to={`${routePath.episode}/${id}`} key={id}>
+                    <EpisodeItem
+                      name={name}
+                      air_date={air_date}
+                      episode={episode}
+                    />
                   </StyledLink>
                 ))}
             </DiscriptionList>
