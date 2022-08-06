@@ -4,7 +4,7 @@ import { routePath } from "@constants/routePath";
 
 import { Burger } from "./Burger";
 
-import { Container } from "@/styled_componets/Container.style";
+import { Container } from "@components/Container/Container.style";
 import {
   HeaderContainer,
   HeaderWrapper,

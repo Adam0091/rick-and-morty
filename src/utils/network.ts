@@ -41,20 +41,3 @@ export const GET_CHARACTER = gql`
     }
   }
 `;
-
-export const GET_LOCATIONS = gql`
-  query LocationsList($ids: [ID!]!) {
-    locationsByIds(ids: $ids) {
-      id
-      name
-      type
-      dimension
-      residents {
-        id
-        name
-        type
-      }
-      created
-    }
-  }
-`;

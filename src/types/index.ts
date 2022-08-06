@@ -1,11 +1,3 @@
-export type SelectType = {
-  label: string;
-  option: string[];
-  value: string | null;
-  type: string;
-};
-
-// Characters
 export type CharacterType = {
   id: number | string;
   name: string;
@@ -15,20 +7,20 @@ export type CharacterType = {
   image: string;
 };
 
-export type CharactersFilterOptionsType = {
+export type FilterOptionsType = {
   name: null | string;
   species: null | string;
   gender: null | string;
   status: null | string;
 };
 
-export type CharactersSelectOptionsType = {
+export type SelectOptionsType = {
   species: string[] | [];
   gender: string[] | [];
   status: string[] | [];
 };
 
-export type CharactersSelectValuesType = {
+export type SelectValuesType = {
   species: null | string;
   gender: null | string;
   status: null | string;
@@ -45,28 +37,4 @@ export type InfoCharacterType = {
     value: string;
     path?: string;
   };
-};
-
-//Locations
-export type LocationType = {
-  id: number | string;
-  name: string;
-  type: string;
-  dimension: string;
-};
-
-export type LocationFilterOptionsType = {
-  name: null | string;
-  type: null | string;
-  dimension: null | string;
-};
-
-export type LocationsSelectOptionsType = {
-  type: string[] | [];
-  dimension: string[] | [];
-};
-
-export type LocationSelectValuesType = {
-  type: null | string;
-  dimension: null | string;
 };
