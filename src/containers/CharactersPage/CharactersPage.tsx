@@ -30,7 +30,7 @@ export const CharactersPage = () => {
       status: "",
     });
 
-  const [items, setItems] = useState([]);
+  const [items, setItems] = useState<CharacterType[]>([]);
   const [visible, setVisible] = useState(8);
   const ids = new Array(826).fill(1).map((_, i) => i + 1);
   const { loading, error, data } = useQuery(GET_CHARACTERS, {
