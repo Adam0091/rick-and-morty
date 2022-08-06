@@ -13,9 +13,9 @@ import { routePath } from "@constants/routePath";
 
 import { EpisodeType, HeaderCharacterType, InfoCharacterType } from "@/types";
 
-import { Container } from "@/styled_componets/Container.style";
-import { CircularContainer } from "@/styled_componets/CircularContainer.style";
-import { StyledBackLink } from "@/styled_componets/StyledBackLink.style";
+import { Container } from "@styled_componets/Container.style";
+import { CircularContainer } from "@styled_componets/CircularContainer.style";
+import { StyledBackLink } from "@styled_componets/StyledBackLink.style";
 import {
   CharacterDiscription,
   CharacterHeader,

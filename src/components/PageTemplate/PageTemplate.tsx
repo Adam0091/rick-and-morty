@@ -1,11 +1,11 @@
 import { CircularProgress } from "@mui/material";
 
-import { CircularContainer } from "@/styled_componets/CircularContainer.style";
-import { Container } from "@/styled_componets/Container.style";
-import { Content } from "@/styled_componets/Content.style";
+import { CircularContainer } from "@styled_componets/CircularContainer.style";
+import { Container } from "@styled_componets/Container.style";
+import { Content } from "@styled_componets/Content.style";
 import { LogoWrapper } from "./PageTemplate.style";
-import { ButtonWrapper } from "@/styled_componets/ButtonWrapper.style";
-import { ButtonStyle } from "@/styled_componets/ButtonStyle.style";
+import { ButtonWrapper } from "@styled_componets/ButtonWrapper.style";
+import { ButtonStyle } from "@styled_componets/ButtonStyle.style";
 
 type TProps = {
   FilterComponent: JSX.Element;

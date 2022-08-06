@@ -6,8 +6,11 @@ import { FiltersButton } from "@components/UI-Kit/FiltersButton";
 import { FiltersSelects } from "@components/UI-Kit/FiltersSelects";
 
 import { FiltersWrapper } from "@components/CharactersPage/CharactersFilters/CharactersFilters.style";
-import { LocationSelectValuesType, LocationsSelectOptionsType } from "@/types";
-import { LocationFilterOptionsType } from "@/types";
+import {
+  LocationSelectValuesType,
+  LocationsSelectOptionsType,
+  LocationFilterOptionsType,
+} from "@/types";
 import { LocationType } from "@/types/enum";
 
 type TProps = {

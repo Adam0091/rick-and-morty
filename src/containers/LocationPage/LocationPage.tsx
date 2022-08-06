@@ -9,9 +9,10 @@ import { CharactersList } from "@components/CharactersPage/CharactersList";
 
 import { CharacterType, HeaderLocationType } from "@/types";
 
-import { Container } from "@/styled_componets/Container.style";
-import { CircularContainer } from "@/styled_componets/CircularContainer.style";
-import { ImageArrowBack } from "../СharacterPage/CharacterPage.style";
+import { Container } from "@styled_componets/Container.style";
+import { CircularContainer } from "@styled_componets/CircularContainer.style";
+import { StyledBackLink } from "@styled_componets/StyledBackLink.style";
+import { ImageArrowBack } from "@containers/СharacterPage/CharacterPage.style";
 import {
   DescriptionItem,
   LocationDescription,
@@ -25,7 +26,6 @@ import {
 } from "./LocationPage.style";
 
 import arrowBack from "@assets/images/arrowBack.svg";
-import { StyledBackLink } from "@/styled_componets/StyledBackLink.style";
 
 export const LocationPage = () => {
   const { id } = useParams();

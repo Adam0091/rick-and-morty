@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
 import { useQuery } from "@apollo/client";
+
 import { CharactersList } from "@components/CharactersPage/CharactersList";
 import { CharactersFilters } from "@components/CharactersPage/CharactersFilters";
+import { PageTemplate } from "@components/PageTemplate";
 
 import { GET_CHARACTERS } from "@utils/network";
 import {
@@ -10,8 +12,7 @@ import {
   CharactersSelectOptionsType,
 } from "@/types";
 
-import logoCharacters from "@/assets/images/logoCharacters.png";
-import { PageTemplate } from "@/components/PageTemplate";
+import logoCharacters from "@assets/images/logoCharacters.png";
 
 export const CharactersPage = () => {
   //Хранит уникальные значение силектов

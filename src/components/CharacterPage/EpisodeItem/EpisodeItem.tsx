@@ -4,7 +4,7 @@ import {
   DiscriptionListItemWrapper,
   DiscriptionName,
   DiscriptionValue,
-} from "@/containers/СharacterPage/CharacterPage.style";
+} from "@containers/СharacterPage/CharacterPage.style";
 
 import arrowNext from "@assets/images/arrowNext.svg";
 
