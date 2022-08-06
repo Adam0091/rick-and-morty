@@ -57,6 +57,11 @@ export type LocationSelectValuesType = {
   dimension: string;
 };
 
+//Location
+export type HeaderLocationType = {
+  name: string;
+} & LocationSelectValuesType;
+
 // Episode
 export type EpisodeType = {
   id: string | number;

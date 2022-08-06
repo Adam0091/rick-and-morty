@@ -58,3 +58,18 @@ export const GET_LOCATIONS = gql`
     }
   }
 `;
+export const GET_LOCATION = gql`
+  query Location($id: ID!) {
+    location(id: $id) {
+      name
+      type
+      dimension
+      residents {
+        id
+        name
+        image
+        species
+      }
+    }
+  }
+`;
