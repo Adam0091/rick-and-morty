@@ -1,8 +1,8 @@
 export const routePath = {
   character: "/character",
   characters: "/characters",
-  location: "",
-  locations: "",
+  location: "/location",
+  locations: "/locations",
   episode: "",
   episodes: "",
 };

@@ -5,7 +5,7 @@ import { useQuery } from "@apollo/client";
 import { GET_CHARACTER } from "@utils/network";
 
 import { CircularProgress } from "@mui/material";
-import { Container } from "@components/Container/Container.style";
+import { Container } from "@/styled_componets/Container.style";
 import { InformationItem } from "@components/CharacterPage/InformationItem";
 import { StyledLink } from "@components/CharactersPage/CharactersList/CharactersList.style";
 
@@ -13,6 +13,7 @@ import { routePath } from "@constants/routePath";
 
 import { HeaderCharacterType, InfoCharacterType } from "@/types";
 
+import { CircularContainer } from "@/styled_componets/CircularContainer.style";
 import {
   CharacterDiscription,
   CharacterHeader,
@@ -30,7 +31,6 @@ import {
   StyledBackLink,
   DiscriptionList,
 } from "./CharacterPage.style";
-import { CircularContainer } from "@containers/CharactersPage/CharactersPage.style";
 
 import arrowBack from "@assets/images/arrowBack.svg";
 import arrowNext from "@assets/images/arrowNext.svg";
