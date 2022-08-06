@@ -15,6 +15,7 @@ import { EpisodeType, HeaderCharacterType, InfoCharacterType } from "@/types";
 
 import { Container } from "@/styled_componets/Container.style";
 import { CircularContainer } from "@/styled_componets/CircularContainer.style";
+import { StyledBackLink } from "@/styled_componets/StyledBackLink.style";
 import {
   CharacterDiscription,
   CharacterHeader,
@@ -24,7 +25,6 @@ import {
   DiscriptionItem,
   DiscriptionTitle,
   ImageArrowBack,
-  StyledBackLink,
   DiscriptionList,
 } from "./CharacterPage.style";
 
@@ -103,12 +103,11 @@ export const CharacterPage = () => {
   return (
     <Container>
       <CharacterWrapper>
-        <StyledBackLink onClick={handleGoBack}>
-          <ImageArrowBack src={arrowBack} alt="arrow back" />
-          <span>GO BACK</span>
-        </StyledBackLink>
-
         <CharacterHeader>
+          <StyledBackLink onClick={handleGoBack} top={"10%"}>
+            <ImageArrowBack src={arrowBack} alt="arrow back" />
+            <span>GO BACK</span>
+          </StyledBackLink>
           <CharacterLogo>
             <img src={headerCharacter.image} alt={headerCharacter.name} />
           </CharacterLogo>

@@ -22,10 +22,10 @@ import {
   ResidentsTitleWrapper,
   ResidentsTitle,
   LocationTitleWrapper,
-  StyledBackLink,
 } from "./LocationPage.style";
 
 import arrowBack from "@assets/images/arrowBack.svg";
+import { StyledBackLink } from "@/styled_componets/StyledBackLink.style";
 
 export const LocationPage = () => {
   const { id } = useParams();
@@ -69,17 +69,19 @@ export const LocationPage = () => {
       <LocationWrapper>
         <LocationHeader>
           <LocationTitleWrapper>
-            <StyledBackLink onClick={handleGoBack}>
+            <StyledBackLink onClick={handleGoBack} top={"50%"}>
               <ImageArrowBack src={arrowBack} alt="arrow back" />
               <span>GO BACK</span>
             </StyledBackLink>
             <LocationTitle>{headerLocation.name}</LocationTitle>
           </LocationTitleWrapper>
+
           <LocationDescription>
             <DescriptionItem>
               <span className="description__title">Type</span>
               <span className="description__value">{headerLocation.type}</span>
             </DescriptionItem>
+
             <DescriptionItem>
               <span className="description__title">Dimension</span>
               <span className="description__value">
@@ -88,6 +90,7 @@ export const LocationPage = () => {
             </DescriptionItem>
           </LocationDescription>
         </LocationHeader>
+
         <LocationResidents>
           <ResidentsTitleWrapper>
             <ResidentsTitle>Residents</ResidentsTitle>
