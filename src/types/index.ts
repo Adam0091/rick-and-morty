@@ -1,7 +1,7 @@
 export type SelectType = {
   label: string;
   option: string[];
-  value: string | null;
+  value: string;
   type: string;
 };
 
@@ -16,27 +16,25 @@ export type CharacterType = {
 };
 
 export type CharactersFilterOptionsType = {
-  name: null | string;
-  species: null | string;
-  gender: null | string;
-  status: null | string;
+  name: string;
+  species: string;
+  gender: string;
+  status: string;
 };
 
 export type CharactersSelectOptionsType = {
-  species: string[] | [];
-  gender: string[] | [];
-  status: string[] | [];
+  [Properties in keyof CharactersSelectValuesType]: string[];
 };
 
 export type CharactersSelectValuesType = {
-  species: null | string;
-  gender: null | string;
-  status: null | string;
+  species: string;
+  gender: string;
+  status: string;
 };
 
 export type HeaderCharacterType = {
-  name: null | string;
-  image: null | string;
+  name: string;
+  image: string;
 };
 
 export type InfoCharacterType = {
@@ -56,17 +54,16 @@ export type LocationType = {
 };
 
 export type LocationFilterOptionsType = {
-  name: null | string;
-  type: null | string;
-  dimension: null | string;
+  name: string;
+  type: string;
+  dimension: string;
 };
 
 export type LocationsSelectOptionsType = {
-  type: string[] | [];
-  dimension: string[] | [];
+  [Properties in keyof LocationSelectValuesType]: string[];
 };
 
 export type LocationSelectValuesType = {
-  type: null | string;
-  dimension: null | string;
+  type: string;
+  dimension: string;
 };

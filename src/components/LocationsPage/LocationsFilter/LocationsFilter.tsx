@@ -25,8 +25,8 @@ export const LocationsFilter = ({
 }: TProps) => {
   const [isActive, setIsActive] = useState(false);
   const [values, setValues] = useState<LocationSelectValuesType>({
-    type: null,
-    dimension: null,
+    type: "",
+    dimension: "",
   });
 
   const selects = [
@@ -44,7 +44,7 @@ export const LocationsFilter = ({
     },
   ];
 
-  const handleSelect = (value: string | null, type: string) => {
+  const handleSelect = (value: string, type: string) => {
     console.log(value, type);
     if (window.innerWidth > 767) {
       setValues((values: LocationSelectValuesType) => ({

@@ -25,9 +25,9 @@ export const LocationsPage = () => {
   // Фильтры для изменения списка персонажей
   const [filterOptions, setFilterOptions] = useState<LocationFilterOptionsType>(
     {
-      name: null,
-      type: null,
-      dimension: null,
+      name: "",
+      type: "",
+      dimension: "",
     }
   );
 
@@ -69,7 +69,7 @@ export const LocationsPage = () => {
 
     if (filterOptions.name)
       result = result.filter((location: LocationType) =>
-        location.name.includes(filterOptions.name as string)
+        location.name.includes(filterOptions.name)
       );
     if (filterOptions.type)
       result = result.filter(

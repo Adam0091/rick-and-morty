@@ -38,8 +38,8 @@ import arrowNext from "@assets/images/arrowNext.svg";
 export const CharacterPage = () => {
   const { id } = useParams();
   const [headerCharacter, setHeaderCharacter] = useState<HeaderCharacterType>({
-    name: null,
-    image: null,
+    name: "",
+    image: "",
   });
   const [infoCharacter, setInfoCharacter] = useState<InfoCharacterType>({});
   const [episodesCharacter, setEpisodesCharacter] = useState([]);
@@ -114,10 +114,7 @@ export const CharacterPage = () => {
         </StyledBackLink>
         <CharacterHeader>
           <CharacterLogo>
-            <img
-              src={headerCharacter.image as string}
-              alt={headerCharacter.name as string}
-            />
+            <img src={headerCharacter.image} alt={headerCharacter.name} />
           </CharacterLogo>
           <CharacterTitle>{headerCharacter.name}</CharacterTitle>
         </CharacterHeader>

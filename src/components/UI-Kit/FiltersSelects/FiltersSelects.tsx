@@ -15,7 +15,7 @@ import { SelectType } from "@/types";
 type TProps = {
   selects: SelectType[];
   isActive: boolean;
-  handleSelect: (value: string | null, type: string) => void;
+  handleSelect: (value: string, type: string) => void;
   onCloseSelects: () => void;
   handleApplyButton: () => void;
 };
@@ -42,7 +42,7 @@ export const FiltersSelects = ({
           options={select.option}
           label={select.label}
           value={select.value}
-          setValue={(value: string | null) => handleSelect(value, select.type)}
+          setValue={(value: string) => handleSelect(value, select.type)}
         />
       ))}
 

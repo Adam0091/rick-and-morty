@@ -24,10 +24,10 @@ export const CharactersPage = () => {
   // Фильтры для изменения списка персонажей
   const [filterOptions, setFilterOptions] =
     useState<CharactersFilterOptionsType>({
-      name: null,
-      species: null,
-      gender: null,
-      status: null,
+      name: "",
+      species: "",
+      gender: "",
+      status: "",
     });
 
   const [items, setItems] = useState([]);
@@ -74,7 +74,7 @@ export const CharactersPage = () => {
 
     if (filterOptions.name)
       result = result.filter((element: CharacterType) =>
-        element.name.includes(filterOptions.name as string)
+        element.name.includes(filterOptions.name)
       );
     if (filterOptions.gender)
       result = result.filter(

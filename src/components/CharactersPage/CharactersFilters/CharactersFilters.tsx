@@ -28,9 +28,9 @@ export const CharactersFilters = ({
 }: TProps) => {
   const [isActive, setIsActive] = useState(false);
   const [values, setValues] = useState<CharactersSelectValuesType>({
-    species: null,
-    gender: null,
-    status: null,
+    species: "",
+    gender: "",
+    status: "",
   });
 
   const selects = [
@@ -61,7 +61,7 @@ export const CharactersFilters = ({
     }));
   };
 
-  const handleSelect = (value: string | null, type: string) => {
+  const handleSelect = (value: string, type: string) => {
     if (window.innerWidth > 767) {
       setValues((values: CharactersSelectValuesType) => ({
         ...values,
