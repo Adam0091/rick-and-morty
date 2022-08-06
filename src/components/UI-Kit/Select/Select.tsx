@@ -10,14 +10,14 @@ type TProps = {
 
 export const Select = ({ options, label, value, setValue }: TProps) => {
   const handleOnChangeSelect = (newValue: unknown) => {
+    if (newValue === null) setValue("");
     if (typeof newValue === "string") setValue(newValue);
-    if (newValue === "") setValue(newValue);
   };
 
   return (
     <SelectStyle
       disablePortal
-      value={value}
+      value={value === "" ? null : value}
       onChange={(_, newValue) => handleOnChangeSelect(newValue)}
       options={options}
       sx={{ width: "100%" }}
