@@ -67,3 +67,12 @@ export type LocationSelectValuesType = {
   type: string;
   dimension: string;
 };
+
+// Episode
+
+export type EpisodeType = {
+  id: string | number;
+  name: string;
+  air_date: string;
+  episode: string;
+};

@@ -11,7 +11,7 @@ import { StyledLink } from "@components/CharactersPage/CharactersList/Characters
 
 import { routePath } from "@constants/routePath";
 
-import { HeaderCharacterType, InfoCharacterType } from "@/types";
+import { EpisodeType, HeaderCharacterType, InfoCharacterType } from "@/types";
 
 import { CircularContainer } from "@/styled_componets/CircularContainer.style";
 import {
@@ -42,7 +42,7 @@ export const CharacterPage = () => {
     image: "",
   });
   const [infoCharacter, setInfoCharacter] = useState<InfoCharacterType>({});
-  const [episodesCharacter, setEpisodesCharacter] = useState([]);
+  const [episodesCharacter, setEpisodesCharacter] = useState<EpisodeType[]>([]);
   const navigate = useNavigate();
 
   const handleGoBack = (event: React.MouseEvent) => {

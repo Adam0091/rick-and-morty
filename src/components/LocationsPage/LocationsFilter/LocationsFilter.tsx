@@ -45,7 +45,6 @@ export const LocationsFilter = ({
   ];
 
   const handleSelect = (value: string, type: string) => {
-    console.log(value, type);
     if (window.innerWidth > 767) {
       setValues((values: LocationSelectValuesType) => ({
         ...values,

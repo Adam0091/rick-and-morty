@@ -31,7 +31,7 @@ export const LocationsPage = () => {
     }
   );
 
-  const [items, setItems] = useState([]);
+  const [items, setItems] = useState<LocationType[]>([]);
   const [visible, setVisible] = useState(8);
   const ids = new Array(126).fill(1).map((_, i) => i + 1);
   const { loading, error, data } = useQuery(GET_LOCATIONS, {
