@@ -69,3 +69,7 @@ export type EpisodeType = {
   air_date: string;
   episode: string;
 };
+
+export type EpisodesFilterOptionsType = {
+  name: string;
+};
