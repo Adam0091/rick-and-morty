@@ -1,6 +1,6 @@
 import { EpisodesFilterOptionsType } from "@/types";
-import { FiltersWrapper } from "@/components/CharactersPage/CharactersFilters/CharactersFilters.style";
-import { FiltersInputSearch } from "@/components/UI-Kit/FiltersInputSearch";
+import { FiltersInputSearch } from "@UI-Kit/FiltersInputSearch";
+import { FiltersWrapper } from "@styled_componets/FiltersWrapper.style";
 
 type TProps = {
   setFilterOptions: React.Dispatch<

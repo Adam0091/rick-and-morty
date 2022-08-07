@@ -5,13 +5,14 @@ import { FiltersButton } from "@UI-Kit/FiltersButton";
 import { FiltersInputSearch } from "@UI-Kit/FiltersInputSearch";
 import { FiltersSelects } from "@UI-Kit/FiltersSelects/FiltersSelects";
 
-import { FiltersWrapper } from "./CharactersFilters.style";
 import {
   CharactersFilterOptionsType,
   CharactersSelectOptionsType,
   CharactersSelectValuesType,
 } from "@/types";
 import { CharacterType } from "@/types/enum";
+
+import { FiltersWrapper } from "@styled_componets/FiltersWrapper.style";
 
 type TProps = {
   selectOption: CharactersSelectOptionsType;
