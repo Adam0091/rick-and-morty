@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import { useQuery } from "@apollo/client";
 
-import { GET_LOCATIONS } from "@/utils/network";
+import { GET_LOCATIONS } from "@utils/network";
 
 import { LocationsList } from "@components/LocationsPage/LocationsList";
 import { LocationsFilter } from "@components/LocationsPage/LocationsFilter";
+import { PageTemplate } from "@components/PageTemplate";
 
 import {
   LocationFilterOptionsType,
@@ -13,7 +14,6 @@ import {
 } from "@/types";
 
 import logoLocations from "@assets/images/logoLocations.png";
-import { PageTemplate } from "@/components/PageTemplate";
 
 export const LocationsPage = () => {
   //Хранит уникальные значение силектов

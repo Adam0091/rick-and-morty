@@ -1,4 +1,5 @@
-import { LocationsPage } from "@/containers/LocationsPage";
+import { LocationPage } from "@containers/LocationPage";
+import { LocationsPage } from "@containers/LocationsPage";
 import { routePath } from "@constants/routePath";
 import { CharactersPage } from "@containers/CharactersPage";
 import { CharacterPage } from "@containers/СharacterPage";
@@ -19,6 +20,10 @@ const routesConfig = [
   {
     path: `${routePath.locations}`,
     element: <LocationsPage />,
+  },
+  {
+    path: `${routePath.location}/:id`,
+    element: <LocationPage />,
   },
 ];
 

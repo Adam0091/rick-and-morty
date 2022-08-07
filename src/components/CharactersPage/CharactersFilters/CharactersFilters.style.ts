@@ -8,6 +8,7 @@ export const FiltersWrapper = styled.div`
   row-gap: 20px;
 
   margin-top: 16px;
+  margin-bottom: 40px;
 
   @media screen and (max-width: 767px) {
     flex-direction: column;

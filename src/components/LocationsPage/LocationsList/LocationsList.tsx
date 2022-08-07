@@ -1,6 +1,6 @@
 import { StyledLink } from "@components/CharactersPage/CharactersList/CharactersList.style";
 import { routePath } from "@constants/routePath";
-import { LocationCard } from "@/components/LocationsPage/LocationCard";
+import { LocationCard } from "@components/LocationsPage/LocationCard";
 import { LocationsWrapper } from "./LocationsList.style";
 import { LocationType } from "@/types";
 

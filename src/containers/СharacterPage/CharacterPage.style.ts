@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const CharacterWrapper = styled.div`
-  position: relative;
   padding-top: 16px;
 
   @media (max-width: 768px) {
@@ -9,29 +8,8 @@ export const CharacterWrapper = styled.div`
   }
 `;
 
-export const StyledBackLink = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  transform: translateY(28px);
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  column-gap: 12px;
-
-  font-family: "Karla";
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 21px;
-
-  color: #000000;
-
-  cursor: pointer;
-`;
-
 export const CharacterHeader = styled.div`
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
