@@ -94,7 +94,10 @@ export const LocationsFilter = ({
     <>
       <Shadow isActive={isActive} setIsActive={setIsActive} />
       <FiltersWrapper>
-        <FiltersInputSearch handleInputSearch={handleInputSearch} />
+        <FiltersInputSearch
+          handleInputSearch={handleInputSearch}
+          placeholder={"Filter by name..."}
+        />
         <FiltersButton setIsActive={setIsActive} />
         <FiltersSelects
           selects={selects}

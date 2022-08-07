@@ -1,8 +1,9 @@
 import styled from "styled-components";
 
-export const FiltersWrapper = styled.div`
+export const FiltersWrapper = styled.div<{ isCenter?: boolean }>`
   display: flex;
   align-items: center;
+  justify-content: ${(isCenter) => (isCenter ? "center" : null)};
 
   column-gap: 20px;
   row-gap: 20px;
