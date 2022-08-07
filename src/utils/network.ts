@@ -1,5 +1,5 @@
 import { gql } from "@apollo/client";
-
+// Character
 export const GET_CHARACTERS = gql`
   query CharactersList($ids: [ID!]!) {
     charactersByIds(ids: $ids) {
@@ -42,6 +42,7 @@ export const GET_CHARACTER = gql`
   }
 `;
 
+// Location
 export const GET_LOCATIONS = gql`
   query LocationsList($ids: [ID!]!) {
     locationsByIds(ids: $ids) {
@@ -69,6 +70,23 @@ export const GET_LOCATION = gql`
         name
         image
         species
+      }
+    }
+  }
+`;
+
+// Episode
+export const GET_EPISODES = gql`
+  query EpisodesList($ids: [ID!]!) {
+    episodesByIds(ids: $ids) {
+      id
+      name
+      air_date
+      episode
+      characters {
+        id
+        name
+        type
       }
     }
   }
