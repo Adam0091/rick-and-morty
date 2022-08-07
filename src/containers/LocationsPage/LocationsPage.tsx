@@ -32,7 +32,7 @@ export const LocationsPage = () => {
   );
 
   const [items, setItems] = useState<LocationType[]>([]);
-  const [visible, setVisible] = useState(8);
+  const [visible, setVisible] = useState(12);
   const ids = new Array(126).fill(1).map((_, i) => i + 1);
   const { loading, error, data } = useQuery(GET_LOCATIONS, {
     variables: { ids },
@@ -80,7 +80,7 @@ export const LocationsPage = () => {
         (location: LocationType) =>
           location.dimension === filterOptions.dimension
       );
-    setVisible(8);
+    setVisible(12);
     setItems(result);
   };
 
