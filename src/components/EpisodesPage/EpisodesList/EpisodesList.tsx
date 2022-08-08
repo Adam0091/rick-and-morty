@@ -13,7 +13,7 @@ export const EpisodesList = ({ episodes, visible }: TProps) => {
   if (episodes.length === 0)
     return (
       <EpisodesWrapper>
-        <div className="locations__not_found">Not Found</div>
+        <span className="locations__not-found">Not Found</span>
       </EpisodesWrapper>
     );
 

@@ -16,7 +16,7 @@ const Global = createGlobalStyle`
     display: flex;
     flex-direction: column;
   }
-  body.block_scroll{
+  body.block-scroll{
     height: 100%;
     overflow: hidden;
   }

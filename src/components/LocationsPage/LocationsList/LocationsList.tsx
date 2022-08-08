@@ -13,7 +13,7 @@ export const LocationsList = ({ locations, visible }: TProps) => {
   if (locations.length === 0)
     return (
       <LocationsWrapper>
-        <div className="locations__not_found">Not Found</div>
+        <span className="locations__not-found">Not Found</span>
       </LocationsWrapper>
     );
 

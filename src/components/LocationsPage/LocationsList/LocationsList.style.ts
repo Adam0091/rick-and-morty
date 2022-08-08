@@ -10,7 +10,7 @@ export const LocationsWrapper = styled.div`
 
   margin-top: 60px;
 
-  .locations__not_found {
+  .locations__not-found {
     width: 100%;
 
     display: flex;

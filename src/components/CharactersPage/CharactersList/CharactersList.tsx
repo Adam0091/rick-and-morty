@@ -16,7 +16,7 @@ export const CharactersList = ({ characters, visible, loading }: TProps) => {
   if (characters.length === 0)
     return (
       <CharactersWrapper>
-        <div className="chracters__not_found">Not Found</div>
+        <span className="chracters__not-found">Not Found</span>
       </CharactersWrapper>
     );
 
