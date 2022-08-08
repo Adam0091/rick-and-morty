@@ -30,7 +30,7 @@ export const ButtonStyle = styled.button`
     color: black;
   }
 
-  &:hover {
+  &:active:hover:not([disabled]) {
     background: #2196f3;
     color: #f2f9fe;
   }

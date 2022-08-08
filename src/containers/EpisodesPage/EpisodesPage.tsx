@@ -23,7 +23,7 @@ export const EpisodesPage = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const prevFilterOptions = useRef({ ...filterOptions });
   const nextPage = useRef(null);
-  const { loading, error, data } = useQuery(GET_EPISODES, {
+  const { error, data } = useQuery(GET_EPISODES, {
     variables: { page: currentPage, filter: filterOptions },
   });
 
@@ -34,7 +34,6 @@ export const EpisodesPage = () => {
 
   useEffect(() => {
     if (data) {
-      console.log(filterOptions);
       const episodes = data.episodes.results;
       nextPage.current = data.episodes.info.next;
       const isFilterNotChange =

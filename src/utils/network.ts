@@ -52,18 +52,23 @@ export const GET_CHARACTER = gql`
 
 // Location
 export const GET_LOCATIONS = gql`
-  query LocationsList($ids: [ID!]!) {
-    locationsByIds(ids: $ids) {
-      id
-      name
-      type
-      dimension
-      residents {
+  query LocationsList($page: Int, $filter: FilterLocation) {
+    locations(page: $page, filter: $filter) {
+      info {
+        next
+      }
+      results {
         id
         name
         type
+        dimension
+        residents {
+          id
+          name
+          type
+        }
+        created
       }
-      created
     }
   }
 `;
