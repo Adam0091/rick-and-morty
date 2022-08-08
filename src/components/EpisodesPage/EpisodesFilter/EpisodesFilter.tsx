@@ -10,10 +10,17 @@ type TProps = {
 
 export const EpisodesFilter = ({ setFilterOptions }: TProps) => {
   const handleInputSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setFilterOptions((filterOptions: EpisodesFilterOptionsType) => ({
-      ...filterOptions,
-      name: e.target.value,
-    }));
+    const value = e.target.value;
+    if (/S\d/.test(value))
+      setFilterOptions({
+        name: "",
+        episode: value,
+      });
+    else
+      setFilterOptions({
+        name: value,
+        episode: "",
+      });
   };
 
   return (

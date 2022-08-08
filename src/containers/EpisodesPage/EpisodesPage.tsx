@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { GET_EPISODES } from "@utils/network";
 import { useQuery } from "@apollo/client";
 
@@ -14,42 +14,42 @@ export const EpisodesPage = () => {
   const [filterOptions, setFilterOptions] = useState<EpisodesFilterOptionsType>(
     {
       name: "",
+      episode: "",
     }
   );
 
   const [items, setItems] = useState<EpisodeType[]>([]);
   const [visible, setVisible] = useState(12);
-  const ids = new Array(51).fill(1).map((_, i) => i + 1);
+  const [currentPage, setCurrentPage] = useState(1);
+  const prevFilterOptions = useRef({ ...filterOptions });
+  const nextPage = useRef(null);
   const { loading, error, data } = useQuery(GET_EPISODES, {
-    variables: { ids },
-    onCompleted: (data) => {
-      const { episodesByIds: result } = data;
-      setItems(result);
-    },
+    variables: { page: currentPage, filter: filterOptions },
   });
 
   const showMoreItems = () => {
+    if (visible % 20 === 0) setCurrentPage((prevValue) => prevValue + 1);
     setVisible((prevValue) => prevValue + 4);
   };
 
-  const filter = () => {
-    if (loading) return;
-
-    let result = data.episodesByIds;
-
-    if (filterOptions.name)
-      result = result.filter(
-        (episodeItem: EpisodeType) =>
-          episodeItem.name.includes(filterOptions.name) ||
-          episodeItem.episode.includes(filterOptions.name)
-      );
-    setVisible(12);
-    setItems(result);
-  };
-
   useEffect(() => {
-    filter();
-  }, [filterOptions]);
+    if (data) {
+      console.log(filterOptions);
+      const episodes = data.episodes.results;
+      nextPage.current = data.episodes.info.next;
+      const isFilterNotChange =
+        JSON.stringify(prevFilterOptions.current) ===
+        JSON.stringify(filterOptions);
+      if (isFilterNotChange) {
+        setItems([...items, ...episodes]);
+      } else {
+        prevFilterOptions.current = { ...filterOptions };
+        setItems(episodes);
+        setCurrentPage(1);
+        setVisible(8);
+      }
+    }
+  }, [data]);
 
   if (error) {
     return <p>Error :(</p>;
@@ -61,7 +61,7 @@ export const EpisodesPage = () => {
       ListComponent={<EpisodesList episodes={items} visible={visible} />}
       logo={logoEpisodes}
       logoAlt="rick and morty"
-      disabled={false}
+      disabled={nextPage.current === null || !data}
       showMoreItems={showMoreItems}
     />
   );

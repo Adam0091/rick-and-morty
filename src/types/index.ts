@@ -72,4 +72,5 @@ export type EpisodeType = {
 
 export type EpisodesFilterOptionsType = {
   name: string;
+  episode: string;
 };

@@ -85,16 +85,21 @@ export const GET_LOCATION = gql`
 
 // Episode
 export const GET_EPISODES = gql`
-  query EpisodesList($ids: [ID!]!) {
-    episodesByIds(ids: $ids) {
-      id
-      name
-      air_date
-      episode
-      characters {
+  query EpisodesPage($page: Int, $filter: FilterEpisode) {
+    episodes(page: $page, filter: $filter) {
+      info {
+        next
+      }
+      results {
         id
         name
-        type
+        air_date
+        episode
+        characters {
+          id
+          name
+          type
+        }
       }
     }
   }
