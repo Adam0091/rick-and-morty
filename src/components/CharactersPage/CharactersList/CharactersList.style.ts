@@ -18,7 +18,6 @@ export const CharactersWrapper = styled.div`
     align-items: center;
     justify-content: center;
 
-    font-style: normal;
     font-weight: 500;
     font-size: 20px;
     line-height: 30px;

@@ -14,7 +14,6 @@ export const ButtonStyle = styled.button`
     0px 6px 10px rgba(0, 0, 0, 0.14);
   border-radius: 4px;
 
-  font-style: normal;
   font-weight: 500;
   font-size: 14px;
   line-height: 16px;
@@ -25,6 +24,11 @@ export const ButtonStyle = styled.button`
   color: #2196f3;
 
   transition: all 0.15s ease-in;
+
+  &:disabled {
+    background: gray;
+    color: black;
+  }
 
   &:hover {
     background: #2196f3;

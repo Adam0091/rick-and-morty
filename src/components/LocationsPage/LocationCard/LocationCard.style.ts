@@ -11,7 +11,6 @@ export const LocationDescription = styled.div`
   text-align: center;
 
   .location__name {
-    font-style: normal;
     font-weight: 500;
     font-size: 20px;
     line-height: 30px;
@@ -22,7 +21,6 @@ export const LocationDescription = styled.div`
   }
 
   .location__type {
-    font-style: normal;
     font-weight: 400;
     font-size: 14px;
     line-height: 21px;

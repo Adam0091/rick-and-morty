@@ -41,7 +41,6 @@ export const CharacterDescription = styled.div`
   padding: 12px 16px;
 
   .character__name {
-    font-style: normal;
     font-weight: 500;
     font-size: 20px;
     line-height: 30px;
@@ -52,7 +51,6 @@ export const CharacterDescription = styled.div`
   }
 
   .character__species {
-    font-style: normal;
     font-weight: 400;
     font-size: 14px;
     line-height: 21px;

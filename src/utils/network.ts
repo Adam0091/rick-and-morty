@@ -1,14 +1,22 @@
 import { gql } from "@apollo/client";
 // Character
 export const GET_CHARACTERS = gql`
-  query CharactersList($ids: [ID!]!) {
-    charactersByIds(ids: $ids) {
-      id
-      name
-      species
-      status
-      gender
-      image
+  query CharactersPage($page: Int, $filter: FilterCharacter) {
+    characters(page: $page, filter: $filter) {
+      info {
+        count
+        pages
+        next
+        prev
+      }
+      results {
+        id
+        name
+        species
+        status
+        gender
+        image
+      }
     }
   }
 `;

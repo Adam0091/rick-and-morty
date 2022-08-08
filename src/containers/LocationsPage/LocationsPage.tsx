@@ -103,7 +103,7 @@ export const LocationsPage = () => {
       ListComponent={<LocationsList locations={items} visible={visible} />}
       logo={logoLocations}
       logoAlt="rick and morty"
-      loading={loading}
+      disabled={false}
       showMoreItems={showMoreItems}
     />
   );

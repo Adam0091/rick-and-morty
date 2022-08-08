@@ -61,7 +61,7 @@ export const EpisodesPage = () => {
       ListComponent={<EpisodesList episodes={items} visible={visible} />}
       logo={logoEpisodes}
       logoAlt="rick and morty"
-      loading={loading}
+      disabled={false}
       showMoreItems={showMoreItems}
     />
   );

@@ -11,7 +11,6 @@ export const EpisodeDescription = styled.div`
   text-align: center;
 
   .episode__name {
-    font-style: normal;
     font-weight: 500;
     font-size: 20px;
     line-height: 30px;
@@ -22,7 +21,6 @@ export const EpisodeDescription = styled.div`
   }
 
   .episode__air-data {
-    font-style: normal;
     font-weight: 400;
     font-size: 14px;
     line-height: 21px;
