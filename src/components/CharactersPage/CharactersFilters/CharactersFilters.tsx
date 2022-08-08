@@ -81,7 +81,7 @@ export const CharactersFilters = ({
   };
 
   const handleApplyButton = () => {
-    document.body.classList.toggle("block_scroll");
+    document.body.classList.toggle("block-scroll");
     setIsActive((isActive: boolean) => !isActive);
     setFilterOptions((filterOptions: CharactersFilterOptionsType) => ({
       ...filterOptions,
@@ -90,7 +90,7 @@ export const CharactersFilters = ({
   };
 
   const onCloseSelects = () => {
-    document.body.classList.toggle("block_scroll");
+    document.body.classList.toggle("block-scroll");
     setIsActive((isActive: boolean) => !isActive);
     setValues({
       species: filterOptions.species,

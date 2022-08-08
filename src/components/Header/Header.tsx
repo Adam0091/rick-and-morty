@@ -19,7 +19,7 @@ export const Header = () => {
 
   const handlerBurger = () => {
     if (window.innerWidth <= 767)
-      document.body.classList.toggle("block_scroll");
+      document.body.classList.toggle("block-scroll");
     setIsActive(!isActive);
   };
 

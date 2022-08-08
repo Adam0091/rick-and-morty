@@ -74,7 +74,7 @@ export const LocationsFilter = ({
   };
 
   const handleApplyButton = () => {
-    document.body.classList.toggle("block_scroll");
+    document.body.classList.toggle("block-scroll");
     setIsActive((isActive: boolean) => !isActive);
     setFilterOptions((filterOptions: LocationFilterOptionsType) => ({
       ...filterOptions,
@@ -83,7 +83,7 @@ export const LocationsFilter = ({
   };
 
   const onCloseSelects = () => {
-    document.body.classList.toggle("block_scroll");
+    document.body.classList.toggle("block-scroll");
     setIsActive((isActive: boolean) => !isActive);
     setValues({
       type: filterOptions.type,

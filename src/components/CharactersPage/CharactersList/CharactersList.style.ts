@@ -11,7 +11,7 @@ export const CharactersWrapper = styled.div`
   row-gap: 36px;
   column-gap: 20px;
 
-  .chracters__not_found {
+  .chracters__not-found {
     width: 100%;
 
     display: flex;
