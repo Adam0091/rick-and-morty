@@ -6,13 +6,17 @@ import { CharactersFilters } from "@components/CharactersPage/CharactersFilters"
 import { PageTemplate } from "@components/PageTemplate";
 
 import { GET_CHARACTERS } from "@utils/network";
-import { CharacterType, CharactersFilterOptionsType, CharactersSelectOptionsType } from "@/types";
+import {
+  CharacterType,
+  CharactersFilterOptionsType,
+  CharactersSelectOptionsType,
+} from "@/types";
 
 import logoCharacters from "@assets/images/logoCharacters.png";
 import { CHARACTERS_OPTION } from "@constants/selectsOption";
 
 export const CharactersPage = () => {
-  const selectOptions : CharactersSelectOptionsType  = {
+  const selectOptions: CharactersSelectOptionsType = {
     species: CHARACTERS_OPTION.species,
     gender: CHARACTERS_OPTION.gender,
     status: CHARACTERS_OPTION.status,

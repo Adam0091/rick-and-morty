@@ -109,3 +109,20 @@ export const GET_EPISODES = gql`
     }
   }
 `;
+
+export const GET_EPISODE = gql`
+  query Episode($id: ID!) {
+    episode(id: $id) {
+      id
+      name
+      air_date
+      episode
+      characters {
+        id
+        image
+        name
+        type
+      }
+    }
+  }
+`;

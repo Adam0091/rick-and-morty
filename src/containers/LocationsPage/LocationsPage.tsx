@@ -7,13 +7,17 @@ import { LocationsList } from "@components/LocationsPage/LocationsList";
 import { LocationsFilter } from "@components/LocationsPage/LocationsFilter";
 import { PageTemplate } from "@components/PageTemplate";
 
-import { LocationFilterOptionsType, LocationType, LocationsSelectOptionsType } from "@/types";
+import {
+  LocationFilterOptionsType,
+  LocationType,
+  LocationsSelectOptionsType,
+} from "@/types";
 
 import logoLocations from "@assets/images/logoLocations.png";
 import { LOCATION_OPTIONS } from "@/constants/selectsOption";
 
 export const LocationsPage = () => {
-  const selectOptions : LocationsSelectOptionsType = {
+  const selectOptions: LocationsSelectOptionsType = {
     type: LOCATION_OPTIONS.type,
     dimension: LOCATION_OPTIONS.dimension,
   };

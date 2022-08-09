@@ -65,12 +65,13 @@ export type HeaderLocationType = {
 // Episode
 export type EpisodeType = {
   id: string | number;
-  name: string;
-  air_date: string;
-  episode: string;
-};
+} & HeaderEpisodeType;
 
 export type EpisodesFilterOptionsType = {
   name: string;
   episode: string;
 };
+
+export type HeaderEpisodeType = {
+  air_date: string;
+} & EpisodesFilterOptionsType;

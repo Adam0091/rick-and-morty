@@ -1,31 +1,17 @@
 import { useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 
 import { GET_LOCATION } from "@utils/network";
 
-import { CircularProgress } from "@mui/material";
-import { CharactersList } from "@components/CharactersPage/CharactersList";
-
 import { CharacterType, HeaderLocationType } from "@/types";
 
-import { Container } from "@styled_componets/Container.style";
-import { CircularContainer } from "@styled_componets/CircularContainer.style";
-import { StyledBackButton } from "@/styled_componets/StyledBackButton.style";
-import { ImageArrowBack } from "@containers/СharacterPage/CharacterPage.style";
+import { PageDetailsTemplate } from "@components/PageDetailsTemplate";
+
 import {
   DescriptionItem,
-  LocationDescription,
-  LocationHeader,
-  LocationResidents,
-  LocationTitle,
-  LocationWrapper,
-  ResidentsTitleWrapper,
-  ResidentsTitle,
-  LocationTitleWrapper,
-} from "./LocationPage.style";
-
-import arrowBack from "@assets/images/arrowBack.svg";
+  DescriptionList,
+} from "@styled_componets/Description.style";
 
 export const LocationPage = () => {
   const { id } = useParams();
@@ -35,12 +21,6 @@ export const LocationPage = () => {
     dimension: "",
   });
   const [residents, setResidents] = useState<CharacterType[]>([]);
-
-  const navigate = useNavigate();
-  const handleGoBack = (event: React.MouseEvent) => {
-    event.preventDefault();
-    navigate(-1);
-  };
 
   const { loading } = useQuery(GET_LOCATION, {
     variables: { id },
@@ -53,55 +33,27 @@ export const LocationPage = () => {
     },
   });
 
-  if (loading)
-    return (
-      <Container>
-        <LocationWrapper>
-          <CircularContainer>
-            <CircularProgress />
-          </CircularContainer>
-        </LocationWrapper>
-      </Container>
-    );
-
   return (
-    <Container>
-      <LocationWrapper>
-        <LocationHeader>
-          <LocationTitleWrapper>
-            <StyledBackButton onClick={handleGoBack} top={"50%"}>
-              <ImageArrowBack src={arrowBack} alt="arrow back" />
-              <span>GO BACK</span>
-            </StyledBackButton>
-            <LocationTitle>{headerLocation.name}</LocationTitle>
-          </LocationTitleWrapper>
+    <PageDetailsTemplate
+      loading={loading}
+      titleHeader={headerLocation.name}
+      listTitle={"Residents"}
+      characters={residents}
+      DescriptionComponent={
+        <DescriptionList>
+          <DescriptionItem>
+            <span className="description__title">Type</span>
+            <span className="description__value">{headerLocation.type}</span>
+          </DescriptionItem>
 
-          <LocationDescription>
-            <DescriptionItem>
-              <span className="description__title">Type</span>
-              <span className="description__value">{headerLocation.type}</span>
-            </DescriptionItem>
-
-            <DescriptionItem>
-              <span className="description__title">Dimension</span>
-              <span className="description__value">
-                {headerLocation.dimension}
-              </span>
-            </DescriptionItem>
-          </LocationDescription>
-        </LocationHeader>
-
-        <LocationResidents>
-          <ResidentsTitleWrapper>
-            <ResidentsTitle>Residents</ResidentsTitle>
-          </ResidentsTitleWrapper>
-          <CharactersList
-            characters={residents}
-            visible={residents.length}
-            loading={loading}
-          />
-        </LocationResidents>
-      </LocationWrapper>
-    </Container>
+          <DescriptionItem>
+            <span className="description__title">Dimension</span>
+            <span className="description__value">
+              {headerLocation.dimension}
+            </span>
+          </DescriptionItem>
+        </DescriptionList>
+      }
+    />
   );
 };
