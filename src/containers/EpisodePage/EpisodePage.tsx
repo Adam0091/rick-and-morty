@@ -25,7 +25,7 @@ export const EpisodePage = () => {
   const { loading } = useQuery(GET_EPISODE, {
     variables: { id },
     onCompleted: (data) => {
-      const { episodeData } = data;
+      const { episode: episodeData } = data;
       const { name, episode, air_date, characters } = episodeData;
 
       setHeaderEpisode({ name, episode, air_date });
