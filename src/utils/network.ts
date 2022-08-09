@@ -1,14 +1,22 @@
 import { gql } from "@apollo/client";
-
+// Character
 export const GET_CHARACTERS = gql`
-  query CharactersList($ids: [ID!]!) {
-    charactersByIds(ids: $ids) {
-      id
-      name
-      species
-      status
-      gender
-      image
+  query CharactersPage($page: Int, $filter: FilterCharacter) {
+    characters(page: $page, filter: $filter) {
+      info {
+        count
+        pages
+        next
+        prev
+      }
+      results {
+        id
+        name
+        species
+        status
+        gender
+        image
+      }
     }
   }
 `;
@@ -42,19 +50,25 @@ export const GET_CHARACTER = gql`
   }
 `;
 
+// Location
 export const GET_LOCATIONS = gql`
-  query LocationsList($ids: [ID!]!) {
-    locationsByIds(ids: $ids) {
-      id
-      name
-      type
-      dimension
-      residents {
+  query LocationsList($page: Int, $filter: FilterLocation) {
+    locations(page: $page, filter: $filter) {
+      info {
+        next
+      }
+      results {
         id
         name
         type
+        dimension
+        residents {
+          id
+          name
+          type
+        }
+        created
       }
-      created
     }
   }
 `;
@@ -69,6 +83,28 @@ export const GET_LOCATION = gql`
         name
         image
         species
+      }
+    }
+  }
+`;
+
+// Episode
+export const GET_EPISODES = gql`
+  query EpisodesPage($page: Int, $filter: FilterEpisode) {
+    episodes(page: $page, filter: $filter) {
+      info {
+        next
+      }
+      results {
+        id
+        name
+        air_date
+        episode
+        characters {
+          id
+          name
+          type
+        }
       }
     }
   }

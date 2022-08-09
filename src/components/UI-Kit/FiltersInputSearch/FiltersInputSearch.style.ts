@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
-export const WrapperInputSearch = styled.div`
+export const WrapperInputSearch = styled.div<{ maxWidth?: string }>`
   width: 100%;
-  max-width: 312px;
+  max-width: ${({ maxWidth }) => (maxWidth ? maxWidth : "312px")};
   display: flex;
 
   border: 1px solid rgba(0, 0, 0, 0.5);
@@ -22,7 +22,6 @@ export const WrapperInputSearch = styled.div`
     outline: none;
     border: none;
 
-    font-style: normal;
     font-weight: 400;
     font-size: 16px;
     line-height: 150%;

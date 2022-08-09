@@ -1,6 +1,3 @@
-import { CircularProgress } from "@mui/material";
-
-import { CircularContainer } from "@styled_componets/CircularContainer.style";
 import { Container } from "@styled_componets/Container.style";
 import { Content } from "@styled_componets/Content.style";
 import { LogoWrapper } from "./PageTemplate.style";
@@ -12,7 +9,7 @@ type TProps = {
   ListComponent: JSX.Element;
   logo: string;
   logoAlt: string;
-  loading: boolean;
+  disabled: boolean;
   showMoreItems: () => void;
 };
 
@@ -21,7 +18,7 @@ export const PageTemplate = ({
   ListComponent,
   logo,
   logoAlt,
-  loading,
+  disabled,
   showMoreItems,
 }: TProps) => (
   <Container>
@@ -32,17 +29,12 @@ export const PageTemplate = ({
 
       <Content>
         {FilterComponent}
-
-        {loading ? (
-          <CircularContainer>
-            <CircularProgress />
-          </CircularContainer>
-        ) : (
-          ListComponent
-        )}
+        {ListComponent}
 
         <ButtonWrapper>
-          <ButtonStyle onClick={showMoreItems}>LOAD MORE</ButtonStyle>
+          <ButtonStyle onClick={showMoreItems} disabled={disabled}>
+            LOAD MORE
+          </ButtonStyle>
         </ButtonWrapper>
       </Content>
     </div>

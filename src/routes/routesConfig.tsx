@@ -3,6 +3,7 @@ import { LocationsPage } from "@containers/LocationsPage";
 import { routePath } from "@constants/routePath";
 import { CharactersPage } from "@containers/CharactersPage";
 import { CharacterPage } from "@containers/СharacterPage";
+import { EpisodesPage } from "@containers/EpisodesPage";
 
 const routesConfig = [
   {
@@ -24,6 +25,10 @@ const routesConfig = [
   {
     path: `${routePath.location}/:id`,
     element: <LocationPage />,
+  },
+  {
+    path: `${routePath.episodes}`,
+    element: <EpisodesPage />,
   },
 ];
 

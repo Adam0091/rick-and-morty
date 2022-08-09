@@ -95,7 +95,11 @@ export const LocationPage = () => {
           <ResidentsTitleWrapper>
             <ResidentsTitle>Residents</ResidentsTitle>
           </ResidentsTitleWrapper>
-          <CharactersList characters={residents} visible={residents.length} />
+          <CharactersList
+            characters={residents}
+            visible={residents.length}
+            loading={loading}
+          />
         </LocationResidents>
       </LocationWrapper>
     </Container>

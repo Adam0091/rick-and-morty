@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const LocationDescription = styled.div`
+export const EpisodeDescription = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -10,7 +10,7 @@ export const LocationDescription = styled.div`
 
   text-align: center;
 
-  .location__name {
+  .episode__name {
     font-weight: 500;
     font-size: 20px;
     line-height: 30px;
@@ -20,11 +20,21 @@ export const LocationDescription = styled.div`
     color: rgba(0, 0, 0, 0.87);
   }
 
-  .location__type {
+  .episode__air-data {
     font-weight: 400;
     font-size: 14px;
     line-height: 21px;
 
+    letter-spacing: 0.25px;
+
+    color: rgba(0, 0, 0, 0.6);
+  }
+  .episode__episode-name {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 21px;
+
+    text-align: center;
     letter-spacing: 0.25px;
 
     color: rgba(0, 0, 0, 0.6);

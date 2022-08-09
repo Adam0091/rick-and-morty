@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const LocationsWrapper = styled.div`
+export const EpisodesWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;

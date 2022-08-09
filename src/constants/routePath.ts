@@ -3,6 +3,6 @@ export const routePath = {
   characters: "/characters",
   location: "/location",
   locations: "/locations",
-  episode: "",
-  episodes: "",
+  episode: "/episode",
+  episodes: "/episodes",
 };

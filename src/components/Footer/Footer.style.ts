@@ -9,7 +9,6 @@ export const FooterWrapper = styled.footer`
     width: 100%;
 
     font-family: "Karla", sans-serif;
-    font-style: normal;
     font-weight: 700;
     font-size: 18px;
     line-height: 21px;

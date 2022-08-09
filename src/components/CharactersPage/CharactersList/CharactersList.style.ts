@@ -11,14 +11,13 @@ export const CharactersWrapper = styled.div`
   row-gap: 36px;
   column-gap: 20px;
 
-  .chracters__not_found {
+  .chracters__not-found {
     width: 100%;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    font-style: normal;
     font-weight: 500;
     font-size: 20px;
     line-height: 30px;

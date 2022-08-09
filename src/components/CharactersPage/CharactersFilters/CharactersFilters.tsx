@@ -5,13 +5,14 @@ import { FiltersButton } from "@UI-Kit/FiltersButton";
 import { FiltersInputSearch } from "@UI-Kit/FiltersInputSearch";
 import { FiltersSelects } from "@UI-Kit/FiltersSelects/FiltersSelects";
 
-import { FiltersWrapper } from "./CharactersFilters.style";
 import {
   CharactersFilterOptionsType,
   CharactersSelectOptionsType,
   CharactersSelectValuesType,
 } from "@/types";
 import { CharacterType } from "@/types/enum";
+
+import { FiltersWrapper } from "@styled_componets/FiltersWrapper.style";
 
 type TProps = {
   selectOption: CharactersSelectOptionsType;
@@ -80,7 +81,7 @@ export const CharactersFilters = ({
   };
 
   const handleApplyButton = () => {
-    document.body.classList.toggle("block_scroll");
+    document.body.classList.toggle("block-scroll");
     setIsActive((isActive: boolean) => !isActive);
     setFilterOptions((filterOptions: CharactersFilterOptionsType) => ({
       ...filterOptions,
@@ -89,7 +90,7 @@ export const CharactersFilters = ({
   };
 
   const onCloseSelects = () => {
-    document.body.classList.toggle("block_scroll");
+    document.body.classList.toggle("block-scroll");
     setIsActive((isActive: boolean) => !isActive);
     setValues({
       species: filterOptions.species,
@@ -102,7 +103,10 @@ export const CharactersFilters = ({
     <>
       <Shadow isActive={isActive} setIsActive={setIsActive} />
       <FiltersWrapper>
-        <FiltersInputSearch handleInputSearch={handleInputSearch} />
+        <FiltersInputSearch
+          handleInputSearch={handleInputSearch}
+          placeholder={"Filter by name..."}
+        />
         <FiltersButton setIsActive={setIsActive} />
         <FiltersSelects
           selects={selects}

@@ -4,7 +4,6 @@ export const LogoWrapper = styled.div`
   margin-top: 26px;
 
   height: 100%;
-  max-height: 200px;
 
   display: flex;
   align-items: center;

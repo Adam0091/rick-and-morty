@@ -5,13 +5,14 @@ import { Shadow } from "@components/UI-Kit/Shadow";
 import { FiltersButton } from "@components/UI-Kit/FiltersButton";
 import { FiltersSelects } from "@components/UI-Kit/FiltersSelects";
 
-import { FiltersWrapper } from "@components/CharactersPage/CharactersFilters/CharactersFilters.style";
 import {
   LocationSelectValuesType,
   LocationsSelectOptionsType,
   LocationFilterOptionsType,
 } from "@/types";
 import { LocationType } from "@/types/enum";
+
+import { FiltersWrapper } from "@styled_componets/FiltersWrapper.style";
 
 type TProps = {
   selectOption: LocationsSelectOptionsType;
@@ -73,7 +74,7 @@ export const LocationsFilter = ({
   };
 
   const handleApplyButton = () => {
-    document.body.classList.toggle("block_scroll");
+    document.body.classList.toggle("block-scroll");
     setIsActive((isActive: boolean) => !isActive);
     setFilterOptions((filterOptions: LocationFilterOptionsType) => ({
       ...filterOptions,
@@ -82,7 +83,7 @@ export const LocationsFilter = ({
   };
 
   const onCloseSelects = () => {
-    document.body.classList.toggle("block_scroll");
+    document.body.classList.toggle("block-scroll");
     setIsActive((isActive: boolean) => !isActive);
     setValues({
       type: filterOptions.type,
@@ -94,7 +95,10 @@ export const LocationsFilter = ({
     <>
       <Shadow isActive={isActive} setIsActive={setIsActive} />
       <FiltersWrapper>
-        <FiltersInputSearch handleInputSearch={handleInputSearch} />
+        <FiltersInputSearch
+          handleInputSearch={handleInputSearch}
+          placeholder={"Filter by name..."}
+        />
         <FiltersButton setIsActive={setIsActive} />
         <FiltersSelects
           selects={selects}

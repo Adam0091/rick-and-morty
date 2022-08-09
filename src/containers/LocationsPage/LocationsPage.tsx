@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useQuery } from "@apollo/client";
 
 import { GET_LOCATIONS } from "@utils/network";
@@ -7,22 +7,17 @@ import { LocationsList } from "@components/LocationsPage/LocationsList";
 import { LocationsFilter } from "@components/LocationsPage/LocationsFilter";
 import { PageTemplate } from "@components/PageTemplate";
 
-import {
-  LocationFilterOptionsType,
-  LocationsSelectOptionsType,
-  LocationType,
-} from "@/types";
+import { LocationFilterOptionsType, LocationType, LocationsSelectOptionsType } from "@/types";
 
 import logoLocations from "@assets/images/logoLocations.png";
+import { LOCATION_OPTIONS } from "@/constants/selectsOption";
 
 export const LocationsPage = () => {
-  //Хранит уникальные значение силектов
-  const [selectOptions, setSelectOptions] =
-    useState<LocationsSelectOptionsType>({
-      type: [],
-      dimension: [],
-    });
-  // Фильтры для изменения списка персонажей
+  const selectOptions : LocationsSelectOptionsType = {
+    type: LOCATION_OPTIONS.type,
+    dimension: LOCATION_OPTIONS.dimension,
+  };
+
   const [filterOptions, setFilterOptions] = useState<LocationFilterOptionsType>(
     {
       name: "",
@@ -32,61 +27,36 @@ export const LocationsPage = () => {
   );
 
   const [items, setItems] = useState<LocationType[]>([]);
-  const [visible, setVisible] = useState(8);
-  const ids = new Array(126).fill(1).map((_, i) => i + 1);
-  const { loading, error, data } = useQuery(GET_LOCATIONS, {
-    variables: { ids },
-    onCompleted: (data) => {
-      const { locationsByIds: result } = data;
-      setItems(result);
-      setSelectOptions({
-        type: Array.from(
-          new Set(
-            result
-              .filter((location: LocationType) => location.type !== "")
-              .map((location: LocationType) => location.type)
-          )
-        ),
-        dimension: Array.from(
-          new Set(
-            result
-              .filter((location: LocationType) => location.dimension !== "")
-              .map((location: LocationType) => location.dimension)
-          )
-        ),
-      });
-    },
+  const [visible, setVisible] = useState(12);
+  const [currentPage, setCurrentPage] = useState(1);
+  const prevFilterOptions = useRef({ ...filterOptions });
+  const nextPage = useRef(null);
+  const { error, data } = useQuery(GET_LOCATIONS, {
+    variables: { page: currentPage, filter: filterOptions },
   });
 
   const showMoreItems = () => {
+    if (visible % 20 === 0) setCurrentPage((prevValue) => prevValue + 1);
     setVisible((prevValue) => prevValue + 4);
   };
 
-  const filter = () => {
-    if (loading) return;
-
-    let result = data.locationsByIds;
-
-    if (filterOptions.name)
-      result = result.filter((location: LocationType) =>
-        location.name.includes(filterOptions.name)
-      );
-    if (filterOptions.type)
-      result = result.filter(
-        (location: LocationType) => location.type === filterOptions.type
-      );
-    if (filterOptions.dimension)
-      result = result.filter(
-        (location: LocationType) =>
-          location.dimension === filterOptions.dimension
-      );
-    setVisible(8);
-    setItems(result);
-  };
-
   useEffect(() => {
-    filter();
-  }, [filterOptions]);
+    if (data) {
+      const locations = data.locations.results;
+      nextPage.current = data.locations.info.next;
+      const isFilterNotChange =
+        JSON.stringify(prevFilterOptions.current) ===
+        JSON.stringify(filterOptions);
+      if (isFilterNotChange) {
+        setItems([...items, ...locations]);
+      } else {
+        prevFilterOptions.current = { ...filterOptions };
+        setItems(locations);
+        setCurrentPage(1);
+        setVisible(8);
+      }
+    }
+  }, [data]);
 
   if (error) {
     return <p>Error :(</p>;
@@ -103,7 +73,7 @@ export const LocationsPage = () => {
       ListComponent={<LocationsList locations={items} visible={visible} />}
       logo={logoLocations}
       logoAlt="rick and morty"
-      loading={loading}
+      disabled={nextPage.current === null || !data}
       showMoreItems={showMoreItems}
     />
   );

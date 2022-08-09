@@ -3,17 +3,20 @@ import { CharacterType } from "@/types";
 
 import { CharactersWrapper, StyledLink } from "./CharactersList.style";
 import { routePath } from "@constants/routePath";
+import { CircularContainer } from "@/styled_componets/CircularContainer.style";
+import { CircularProgress } from "@mui/material";
 
 type TProps = {
   characters: CharacterType[];
   visible: number;
+  loading: boolean;
 };
 
-export const CharactersList = ({ characters, visible }: TProps) => {
+export const CharactersList = ({ characters, visible, loading }: TProps) => {
   if (characters.length === 0)
     return (
       <CharactersWrapper>
-        <div className="chracters__not_found">Not Found</div>
+        <span className="chracters__not-found">Not Found</span>
       </CharactersWrapper>
     );
 
@@ -27,6 +30,11 @@ export const CharactersList = ({ characters, visible }: TProps) => {
           <CharacterCard character={character} />
         </StyledLink>
       ))}
+      {loading && (
+        <CircularContainer>
+          <CircularProgress />
+        </CircularContainer>
+      )}
     </CharactersWrapper>
   );
 };
