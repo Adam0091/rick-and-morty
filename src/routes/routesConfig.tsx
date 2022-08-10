@@ -1,9 +1,11 @@
 import { LocationPage } from "@containers/LocationPage";
 import { LocationsPage } from "@containers/LocationsPage";
-import { routePath } from "@constants/routePath";
 import { CharactersPage } from "@containers/CharactersPage";
 import { CharacterPage } from "@containers/СharacterPage";
 import { EpisodesPage } from "@containers/EpisodesPage";
+import { EpisodePage } from "@containers/EpisodePage";
+
+import { routePath } from "@constants/routePath";
 
 const routesConfig = [
   {
@@ -29,6 +31,10 @@ const routesConfig = [
   {
     path: `${routePath.episodes}`,
     element: <EpisodesPage />,
+  },
+  {
+    path: `${routePath.episode}/:id`,
+    element: <EpisodePage />,
   },
 ];
 
